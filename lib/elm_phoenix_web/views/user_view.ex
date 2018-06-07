@@ -8,6 +8,6 @@ defmodule ElmPhoenixWeb.UserView do
   end
 
   def render("user.json", %{user: user}) do
-    %{id: user.id, name: user.name, email: user.email, password: user.password}
+    %{id: user.id, name: user.name, email: user.email}
   end
 end
