@@ -25,5 +25,7 @@ defmodule ElmPhoenixWeb.Router do
     pipe_through(:api)
 
     get("/users", UserController, :index)
+    post("/signup", UserController, :signup)
+    post("/signin", UserController, :signin)
   end
 end

@@ -42,7 +42,8 @@ defmodule ElmPhoenix.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:comeonin, "~> 4.0.3"},
-      {:bcrypt_elixir, "~> 1.0.7"}
+      {:bcrypt_elixir, "~> 1.0.7"},
+      {:guardian, "~> 1.0.1"}
     ]
   end
 
