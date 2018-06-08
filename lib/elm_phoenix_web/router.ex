@@ -1,6 +1,8 @@
 defmodule ElmPhoenixWeb.Router do
   use ElmPhoenixWeb, :router
 
+  alias ElmPhoenix.Guardian
+
   pipeline :browser do
     plug(:accepts, ["html"])
     plug(:fetch_session)
@@ -11,6 +13,10 @@ defmodule ElmPhoenixWeb.Router do
 
   pipeline :api do
     plug(:accepts, ["json"])
+  end
+
+  pipeline :authenticated do
+    plug(Guardian.AuthPipeline)
   end
 
   # scope "/", ElmPhoenixWeb do
@@ -24,8 +30,13 @@ defmodule ElmPhoenixWeb.Router do
   scope "/api/v1", ElmPhoenixWeb do
     pipe_through(:api)
 
-    get("/users", UserController, :index)
     post("/signup", UserController, :signup)
     post("/signin", UserController, :signin)
+  end
+
+  scope "/api/v1", ElmPhoenixWeb do
+    pipe_through([:api, :authenticated])
+
+    get("/users", UserController, :index)
   end
 end
