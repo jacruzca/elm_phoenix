@@ -1,0 +1,135 @@
+{
+	"info": {
+		"name": "ElmPhoenix",
+		"_postman_id": "95afd68b-6b4a-d03b-54a6-0b0713f15545",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\": {\n\t\t\"name\": \"Jhon Cruz\",\n\t\t\"email\": \"jhon.unal8@gmail.com\",\n\t\t\"password\": \"12345678\",\n\t\t\"password_confirm\": \"12345678\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"signup"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"jhon.unal8@gmail.com\",\n\t\"password\": \"12345678\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"signin"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"jhon.unal8@gmail.com\",\n\t\"password\": \"123456789\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJlbG1fcGhvZW5peCIsImV4cCI6MTUzMDg0MjQ4NywiaWF0IjoxNTI4NDIzMjg3LCJpc3MiOiJlbG1fcGhvZW5peCIsImp0aSI6IjgwNTNmNDI3LTUzMzItNDhkMC1iOTZjLWQ0NTllMWZmODA4ZSIsIm5iZiI6MTUyODQyMzI4Niwic3ViIjoiMjgiLCJ0eXAiOiJhY2Nlc3MifQ.uPMOBd7wgc39GKhS7HFgeQcllp7OzBTZwNF0kd5g549JJA8KvhLhfiDhhfH4LTlGN0ZgcqpEFBsmycwGVQXA8g",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4372a48d-6094-43a7-83ef-db02533e6ea2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ddd6fcb6-9d17-4c02-adb8-bcf11185da5a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
