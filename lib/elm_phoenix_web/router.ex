@@ -19,12 +19,12 @@ defmodule ElmPhoenixWeb.Router do
     plug(Guardian.AuthPipeline)
   end
 
-  # scope "/", ElmPhoenixWeb do
-  #   # Use the default browser stack
-  #   pipe_through(:browser)
+  scope "/", ElmPhoenixWeb do
+    # Use the default browser stack
+    pipe_through(:browser)
 
-  #   get("/", PageController, :index)
-  # end
+    get("/", PageController, :index)
+  end
 
   # Other scopes may use custom stacks.
   scope "/api/v1", ElmPhoenixWeb do

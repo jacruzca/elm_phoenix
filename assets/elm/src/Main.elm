@@ -1,55 +1,23 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, h1, img)
-import Html.Attributes exposing (src)
+import Navigation
+import View
+import Update
+import Model exposing (Model)
 
 
----- MODEL ----
-
-
-type alias Model =
-    {}
-
-
-init : ( Model, Cmd Msg )
-init =
-    ( {}, Cmd.none )
-
-
-
----- UPDATE ----
-
-
-type Msg
-    = NoOp
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    ( model, Cmd.none )
-
-
-
----- VIEW ----
-
-
-view : Model -> Html Msg
-view model =
-    div []
-        [ img [ src "/images/logo.svg" ] []
-        , h1 [] [ text "Your Elm App is working!" ]
-        ]
-
-
-
----- PROGRAM ----
-
-
-main : Program Never Model Msg
+main : Program Never Model Update.Msg
 main =
-    Html.program
-        { view = view
-        , init = init
-        , update = update
-        , subscriptions = always Sub.none
+    Navigation.program
+        Update.ChangeLocation
+        { init = init
+        , view = View.view
+        , update = Update.update
+        , subscriptions = (\_ -> Sub.none)
         }
+
+
+init : Navigation.Location -> ( Model, Cmd Update.Msg )
+init location =
+    Model.init location
+        ! []

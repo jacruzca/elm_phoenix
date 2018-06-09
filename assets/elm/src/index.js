@@ -1,7 +1,7 @@
 import './main.css';
-import { Main } from './Main.elm';
+import { Signup } from './Signup.elm';
 import registerServiceWorker from './registerServiceWorker';
 
-Main.embed(document.getElementById('root'));
+Signup.embed(document.getElementById('root'));
 
 registerServiceWorker();
