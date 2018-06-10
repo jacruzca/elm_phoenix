@@ -49,7 +49,7 @@ update msg model =
                     Debug.log "newSession" { user = response.user, token = response.token }
             in
                 ( { model
-                    | session = newSession
+                    | session = Maybe.Just newSession
                     , signin = { login | success = True, showErrors = False }
                   }
                 , Cmd.batch [ storeSessionCmd newSession, Navigation.modifyUrl "/#" ]

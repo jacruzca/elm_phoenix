@@ -13948,7 +13948,7 @@ var _user$project$Signin_SigninModel$initialModel = {
 	success: false
 };
 
-var _user$project$Session_SessionModel$initialModel = {user: _elm_lang$core$Maybe$Nothing, token: _elm_lang$core$Maybe$Nothing};
+var _user$project$Session_SessionModel$initialModel = _elm_lang$core$Maybe$Nothing;
 var _user$project$Session_SessionModel$Session = F2(
 	function (a, b) {
 		return {user: a, token: b};
@@ -13959,14 +13959,7 @@ var _user$project$Model$init = F2(
 		return {
 			screen: _user$project$Router$screenFromLocation(location),
 			signin: _user$project$Signin_SigninModel$initialModel,
-			session: function () {
-				var _p0 = flags;
-				if (_p0.ctor === 'Just') {
-					return _p0._0;
-				} else {
-					return _user$project$Session_SessionModel$initialModel;
-				}
-			}()
+			session: flags
 		};
 	});
 var _user$project$Model$Model = F3(
@@ -14115,6 +14108,28 @@ var _user$project$Session_SessionPort$storeSession = _elm_lang$core$Native_Platf
 		return (v.ctor === 'Nothing') ? null : v._0;
 	});
 
+var _user$project$Session_SessionCommand$checkSession = function (session) {
+	var _p0 = session;
+	if (_p0.ctor === 'Nothing') {
+		return false;
+	} else {
+		var _p3 = _p0._0;
+		var _p1 = _p3.user;
+		if (_p1.ctor === 'Nothing') {
+			return false;
+		} else {
+			var _p2 = _p3.token;
+			if (_p2.ctor === 'Nothing') {
+				return false;
+			} else {
+				return true;
+			}
+		}
+	}
+};
+var _user$project$Session_SessionCommand$checkSessionCmd = function (session) {
+	return _user$project$Session_SessionCommand$checkSession(session) ? _elm_lang$navigation$Navigation$modifyUrl('/#') : _elm_lang$navigation$Navigation$modifyUrl('/#signin');
+};
 var _user$project$Session_SessionCommand$storeSessionCmd = function (session) {
 	return _user$project$Session_SessionPort$storeSession(
 		_elm_lang$core$Maybe$Just(
@@ -14259,7 +14274,7 @@ var _user$project$Signin_SigninUpdate$update = F2(
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
-								session: newSession,
+								session: _elm_lang$core$Maybe$Just(newSession),
 								signin: _elm_lang$core$Native_Utils.update(
 									login,
 									{success: true, showErrors: false})
@@ -14331,12 +14346,18 @@ var _user$project$Update$update = F2(
 	function (msg, model) {
 		var _p2 = msg;
 		if (_p2.ctor === 'ChangeLocation') {
+			var _p4 = _p2._0;
+			var _p3 = A2(
+				_elm_lang$core$Debug$log,
+				'LOCATION',
+				_user$project$Router$screenFromLocation(_p4));
+			var check = _user$project$Session_SessionCommand$checkSession(model.session);
 			return A2(
 				_elm_lang$core$Platform_Cmd_ops['!'],
 				_elm_lang$core$Native_Utils.update(
 					model,
 					{
-						screen: _user$project$Router$screenFromLocation(_p2._0)
+						screen: check ? _user$project$Router$screenFromLocation(_p4) : _user$project$Router$Signin
 					}),
 				{ctor: '[]'});
 		} else {
@@ -14580,10 +14601,11 @@ var _user$project$View$view = function (model) {
 var _user$project$Main$init = F2(
 	function (flags, location) {
 		var _p0 = A2(_elm_lang$core$Debug$log, 'flags', flags);
-		return A2(
-			_elm_lang$core$Platform_Cmd_ops['!'],
-			A2(_user$project$Model$init, location, flags),
-			{ctor: '[]'});
+		return {
+			ctor: '_Tuple2',
+			_0: A2(_user$project$Model$init, location, flags),
+			_1: _user$project$Session_SessionCommand$checkSessionCmd(flags)
+		};
 	});
 var _user$project$Main$main = A2(
 	_elm_lang$navigation$Navigation$programWithFlags,

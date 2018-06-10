@@ -5,6 +5,7 @@ import View
 import Update
 import Model exposing (Model)
 import Session.SessionModel
+import Session.SessionCommand exposing (checkSessionCmd)
 
 
 main : Program (Maybe Session.SessionModel.Session) Model Update.Msg
@@ -24,5 +25,4 @@ init flags location =
         _ =
             Debug.log "flags" flags
     in
-        Model.init location flags
-            ! []
+        ( Model.init location flags, checkSessionCmd flags )

@@ -9,8 +9,6 @@ type alias Session =
     }
 
 
-initialModel : Session
+initialModel : Maybe Session
 initialModel =
-    { user = Nothing
-    , token = Nothing
-    }
+    Nothing

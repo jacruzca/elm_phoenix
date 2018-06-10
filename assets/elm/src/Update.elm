@@ -2,9 +2,10 @@ module Update exposing (..)
 
 import Navigation exposing (Location)
 import Model exposing (Model)
-import Router exposing (screenFromLocation)
+import Router exposing (screenFromLocation, Screen(..))
 import Signin.SigninMessage
 import Signin.SigninUpdate
+import Session.SessionCommand exposing (checkSession)
 
 
 type Msg
@@ -16,7 +17,21 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         ChangeLocation location ->
-            { model | screen = screenFromLocation location } ! []
+            let
+                check =
+                    checkSession model.session
+
+                _ =
+                    Debug.log "LOCATION" (screenFromLocation location)
+            in
+                { model
+                    | screen =
+                        if check then
+                            screenFromLocation location
+                        else
+                            Signin
+                }
+                    ! []
 
         SigninEvent e ->
             wrapScreen SigninEvent <| Signin.SigninUpdate.update e model
