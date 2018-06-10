@@ -1,11 +1,11 @@
 module View exposing (view)
 
 import Html exposing (..)
-import Html.Attributes exposing (..)
 import Update exposing (Msg)
 import Router exposing (Screen(..))
 import Model exposing (Model)
 import Signin.SigninView
+import Home.HomeView
 
 
 view : Model -> Html Msg
@@ -16,11 +16,7 @@ view model =
     in
         case model.screen of
             Main ->
-                div
-                    [ style [ ( "border", "#000 1px solid" ) ]
-                    ]
-                    [ text "Main!"
-                    ]
+                wrapScreen Update.HomeEvent <| Home.HomeView.view model
 
             Signin ->
                 wrapScreen Update.SigninEvent <| Signin.SigninView.view model
