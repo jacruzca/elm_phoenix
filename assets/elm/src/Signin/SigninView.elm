@@ -1,8 +1,8 @@
 module Signin.SigninView exposing (..)
 
 import Model exposing (Model)
-import Signin.SigninUpdate exposing (Msg)
-import Signin.SigninModel exposing (User, FormField, Error)
+import Signin.SigninMessage exposing (Msg)
+import Signin.SigninModel exposing (Login, FormField, Error)
 import Html exposing (Html, p, h2, h3, text, div, small, label, li, ul)
 import Html.Attributes exposing (href, class, style, for)
 import Bootstrap.Card as Card
@@ -15,16 +15,16 @@ import Bootstrap.Form.Input as Input
 import Bootstrap.Button as Button
 
 
-form : User -> Html Msg
+form : Login -> Html Msg
 form model =
     Form.form []
         [ viewInput model Signin.SigninModel.Email "E-mail" "text" "email"
         , viewInput model Signin.SigninModel.Password "Password" "password" "password"
-        , Button.button [ Button.primary, Button.onClick Signin.SigninUpdate.SubmitForm ] [ text "Submit" ]
+        , Button.button [ Button.primary, Button.onClick Signin.SigninMessage.SubmitForm ] [ text "Submit" ]
         ]
 
 
-viewInput : User -> FormField -> String -> String -> String -> Html Msg
+viewInput : Login -> FormField -> String -> String -> String -> Html Msg
 viewInput model formField label inputType inputName =
     let
         content =
@@ -43,12 +43,12 @@ viewInput model formField label inputType inputName =
     in
         Form.group []
             [ Form.label [ for inputName ] [ text label ]
-            , input [ Input.id inputName, Input.onInput <| Signin.SigninUpdate.SetField formField ]
+            , input [ Input.id inputName, Input.onInput <| Signin.SigninMessage.SetField formField ]
             , viewFormErrors model formField model.errors
             ]
 
 
-viewFormErrors : User -> FormField -> List Error -> Html msg
+viewFormErrors : Login -> FormField -> List Error -> Html msg
 viewFormErrors model field errors =
     if model.showErrors then
         errors
@@ -61,12 +61,16 @@ viewFormErrors model field errors =
 
 view : Model -> Html Msg
 view model =
-    div
-        []
-        [ Card.config [ Card.align Text.alignXsCenter ]
-            |> Card.header [] [ h3 [] [ text "Sign in" ] ]
-            |> Card.block [] [ Block.custom <| form model.signin ]
-            |> Card.footer []
-                [ small [ class "text-muted" ] [ text "No account?" ] ]
-            |> Card.view
-        ]
+    let
+        _ =
+            Debug.log "foo" model
+    in
+        div
+            []
+            [ Card.config [ Card.align Text.alignXsCenter ]
+                |> Card.header [] [ h3 [] [ text "Sign in" ] ]
+                |> Card.block [] [ Block.custom <| form model.signin ]
+                |> Card.footer []
+                    [ small [ class "text-muted" ] [ text "No account?" ] ]
+                |> Card.view
+            ]

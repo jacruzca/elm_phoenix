@@ -3,12 +3,13 @@ module Update exposing (..)
 import Navigation exposing (Location)
 import Model exposing (Model)
 import Router exposing (screenFromLocation)
+import Signin.SigninMessage
 import Signin.SigninUpdate
 
 
 type Msg
     = ChangeLocation Location
-    | SigninEvent Signin.SigninUpdate.Msg
+    | SigninEvent Signin.SigninMessage.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )

@@ -22,5 +22,18 @@ import 'phoenix_html';
 
 import Elm from './elm';
 
+var storedSession = localStorage.getItem('session');
+var startingState = storedSession ? JSON.parse(storedSession) : null;
+startingState =
+  startingState && startingState.user && startingState.token
+    ? startingState
+    : null;
+
+console.log('Starting state: ', startingState);
+
 const elmDiv = document.getElementById('elm-main');
-Elm.Main.embed(elmDiv);
+var app = Elm.Main.embed(elmDiv, startingState);
+
+app.ports.storeSession.subscribe(function(session) {
+  localStorage.session = session;
+});

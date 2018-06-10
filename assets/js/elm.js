@@ -5757,6 +5757,86 @@ var _elm_lang$core$Platform$Task = {ctor: 'Task'};
 var _elm_lang$core$Platform$ProcessId = {ctor: 'ProcessId'};
 var _elm_lang$core$Platform$Router = {ctor: 'Router'};
 
+var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode = _elm_lang$core$Json_Decode$succeed;
+var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$resolve = _elm_lang$core$Json_Decode$andThen(_elm_lang$core$Basics$identity);
+var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom = _elm_lang$core$Json_Decode$map2(
+	F2(
+		function (x, y) {
+			return y(x);
+		}));
+var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$hardcoded = function (_p0) {
+	return _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom(
+		_elm_lang$core$Json_Decode$succeed(_p0));
+};
+var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optionalDecoder = F3(
+	function (pathDecoder, valDecoder, fallback) {
+		var nullOr = function (decoder) {
+			return _elm_lang$core$Json_Decode$oneOf(
+				{
+					ctor: '::',
+					_0: decoder,
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$core$Json_Decode$null(fallback),
+						_1: {ctor: '[]'}
+					}
+				});
+		};
+		var handleResult = function (input) {
+			var _p1 = A2(_elm_lang$core$Json_Decode$decodeValue, pathDecoder, input);
+			if (_p1.ctor === 'Ok') {
+				var _p2 = A2(
+					_elm_lang$core$Json_Decode$decodeValue,
+					nullOr(valDecoder),
+					_p1._0);
+				if (_p2.ctor === 'Ok') {
+					return _elm_lang$core$Json_Decode$succeed(_p2._0);
+				} else {
+					return _elm_lang$core$Json_Decode$fail(_p2._0);
+				}
+			} else {
+				return _elm_lang$core$Json_Decode$succeed(fallback);
+			}
+		};
+		return A2(_elm_lang$core$Json_Decode$andThen, handleResult, _elm_lang$core$Json_Decode$value);
+	});
+var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optionalAt = F4(
+	function (path, valDecoder, fallback, decoder) {
+		return A2(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optionalDecoder,
+				A2(_elm_lang$core$Json_Decode$at, path, _elm_lang$core$Json_Decode$value),
+				valDecoder,
+				fallback),
+			decoder);
+	});
+var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional = F4(
+	function (key, valDecoder, fallback, decoder) {
+		return A2(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optionalDecoder,
+				A2(_elm_lang$core$Json_Decode$field, key, _elm_lang$core$Json_Decode$value),
+				valDecoder,
+				fallback),
+			decoder);
+	});
+var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$requiredAt = F3(
+	function (path, valDecoder, decoder) {
+		return A2(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+			A2(_elm_lang$core$Json_Decode$at, path, valDecoder),
+			decoder);
+	});
+var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required = F3(
+	function (key, valDecoder, decoder) {
+		return A2(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+			A2(_elm_lang$core$Json_Decode$field, key, valDecoder),
+			decoder);
+	});
+
 var _elm_lang$animation_frame$Native_AnimationFrame = function()
 {
 
@@ -9298,6 +9378,367 @@ var _elm_lang$html$Html_Events$Options = F2(
 var _elm_lang$html$Html_Keyed$node = _elm_lang$virtual_dom$VirtualDom$keyedNode;
 var _elm_lang$html$Html_Keyed$ol = _elm_lang$html$Html_Keyed$node('ol');
 var _elm_lang$html$Html_Keyed$ul = _elm_lang$html$Html_Keyed$node('ul');
+
+var _elm_lang$http$Native_Http = function() {
+
+
+// ENCODING AND DECODING
+
+function encodeUri(string)
+{
+	return encodeURIComponent(string);
+}
+
+function decodeUri(string)
+{
+	try
+	{
+		return _elm_lang$core$Maybe$Just(decodeURIComponent(string));
+	}
+	catch(e)
+	{
+		return _elm_lang$core$Maybe$Nothing;
+	}
+}
+
+
+// SEND REQUEST
+
+function toTask(request, maybeProgress)
+{
+	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
+	{
+		var xhr = new XMLHttpRequest();
+
+		configureProgress(xhr, maybeProgress);
+
+		xhr.addEventListener('error', function() {
+			callback(_elm_lang$core$Native_Scheduler.fail({ ctor: 'NetworkError' }));
+		});
+		xhr.addEventListener('timeout', function() {
+			callback(_elm_lang$core$Native_Scheduler.fail({ ctor: 'Timeout' }));
+		});
+		xhr.addEventListener('load', function() {
+			callback(handleResponse(xhr, request.expect.responseToResult));
+		});
+
+		try
+		{
+			xhr.open(request.method, request.url, true);
+		}
+		catch (e)
+		{
+			return callback(_elm_lang$core$Native_Scheduler.fail({ ctor: 'BadUrl', _0: request.url }));
+		}
+
+		configureRequest(xhr, request);
+		send(xhr, request.body);
+
+		return function() { xhr.abort(); };
+	});
+}
+
+function configureProgress(xhr, maybeProgress)
+{
+	if (maybeProgress.ctor === 'Nothing')
+	{
+		return;
+	}
+
+	xhr.addEventListener('progress', function(event) {
+		if (!event.lengthComputable)
+		{
+			return;
+		}
+		_elm_lang$core$Native_Scheduler.rawSpawn(maybeProgress._0({
+			bytes: event.loaded,
+			bytesExpected: event.total
+		}));
+	});
+}
+
+function configureRequest(xhr, request)
+{
+	function setHeader(pair)
+	{
+		xhr.setRequestHeader(pair._0, pair._1);
+	}
+
+	A2(_elm_lang$core$List$map, setHeader, request.headers);
+	xhr.responseType = request.expect.responseType;
+	xhr.withCredentials = request.withCredentials;
+
+	if (request.timeout.ctor === 'Just')
+	{
+		xhr.timeout = request.timeout._0;
+	}
+}
+
+function send(xhr, body)
+{
+	switch (body.ctor)
+	{
+		case 'EmptyBody':
+			xhr.send();
+			return;
+
+		case 'StringBody':
+			xhr.setRequestHeader('Content-Type', body._0);
+			xhr.send(body._1);
+			return;
+
+		case 'FormDataBody':
+			xhr.send(body._0);
+			return;
+	}
+}
+
+
+// RESPONSES
+
+function handleResponse(xhr, responseToResult)
+{
+	var response = toResponse(xhr);
+
+	if (xhr.status < 200 || 300 <= xhr.status)
+	{
+		response.body = xhr.responseText;
+		return _elm_lang$core$Native_Scheduler.fail({
+			ctor: 'BadStatus',
+			_0: response
+		});
+	}
+
+	var result = responseToResult(response);
+
+	if (result.ctor === 'Ok')
+	{
+		return _elm_lang$core$Native_Scheduler.succeed(result._0);
+	}
+	else
+	{
+		response.body = xhr.responseText;
+		return _elm_lang$core$Native_Scheduler.fail({
+			ctor: 'BadPayload',
+			_0: result._0,
+			_1: response
+		});
+	}
+}
+
+function toResponse(xhr)
+{
+	return {
+		status: { code: xhr.status, message: xhr.statusText },
+		headers: parseHeaders(xhr.getAllResponseHeaders()),
+		url: xhr.responseURL,
+		body: xhr.response
+	};
+}
+
+function parseHeaders(rawHeaders)
+{
+	var headers = _elm_lang$core$Dict$empty;
+
+	if (!rawHeaders)
+	{
+		return headers;
+	}
+
+	var headerPairs = rawHeaders.split('\u000d\u000a');
+	for (var i = headerPairs.length; i--; )
+	{
+		var headerPair = headerPairs[i];
+		var index = headerPair.indexOf('\u003a\u0020');
+		if (index > 0)
+		{
+			var key = headerPair.substring(0, index);
+			var value = headerPair.substring(index + 2);
+
+			headers = A3(_elm_lang$core$Dict$update, key, function(oldValue) {
+				if (oldValue.ctor === 'Just')
+				{
+					return _elm_lang$core$Maybe$Just(value + ', ' + oldValue._0);
+				}
+				return _elm_lang$core$Maybe$Just(value);
+			}, headers);
+		}
+	}
+
+	return headers;
+}
+
+
+// EXPECTORS
+
+function expectStringResponse(responseToResult)
+{
+	return {
+		responseType: 'text',
+		responseToResult: responseToResult
+	};
+}
+
+function mapExpect(func, expect)
+{
+	return {
+		responseType: expect.responseType,
+		responseToResult: function(response) {
+			var convertedResponse = expect.responseToResult(response);
+			return A2(_elm_lang$core$Result$map, func, convertedResponse);
+		}
+	};
+}
+
+
+// BODY
+
+function multipart(parts)
+{
+	var formData = new FormData();
+
+	while (parts.ctor !== '[]')
+	{
+		var part = parts._0;
+		formData.append(part._0, part._1);
+		parts = parts._1;
+	}
+
+	return { ctor: 'FormDataBody', _0: formData };
+}
+
+return {
+	toTask: F2(toTask),
+	expectStringResponse: expectStringResponse,
+	mapExpect: F2(mapExpect),
+	multipart: multipart,
+	encodeUri: encodeUri,
+	decodeUri: decodeUri
+};
+
+}();
+
+var _elm_lang$http$Http_Internal$map = F2(
+	function (func, request) {
+		return _elm_lang$core$Native_Utils.update(
+			request,
+			{
+				expect: A2(_elm_lang$http$Native_Http.mapExpect, func, request.expect)
+			});
+	});
+var _elm_lang$http$Http_Internal$RawRequest = F7(
+	function (a, b, c, d, e, f, g) {
+		return {method: a, headers: b, url: c, body: d, expect: e, timeout: f, withCredentials: g};
+	});
+var _elm_lang$http$Http_Internal$Request = function (a) {
+	return {ctor: 'Request', _0: a};
+};
+var _elm_lang$http$Http_Internal$Expect = {ctor: 'Expect'};
+var _elm_lang$http$Http_Internal$FormDataBody = {ctor: 'FormDataBody'};
+var _elm_lang$http$Http_Internal$StringBody = F2(
+	function (a, b) {
+		return {ctor: 'StringBody', _0: a, _1: b};
+	});
+var _elm_lang$http$Http_Internal$EmptyBody = {ctor: 'EmptyBody'};
+var _elm_lang$http$Http_Internal$Header = F2(
+	function (a, b) {
+		return {ctor: 'Header', _0: a, _1: b};
+	});
+
+var _elm_lang$http$Http$decodeUri = _elm_lang$http$Native_Http.decodeUri;
+var _elm_lang$http$Http$encodeUri = _elm_lang$http$Native_Http.encodeUri;
+var _elm_lang$http$Http$expectStringResponse = _elm_lang$http$Native_Http.expectStringResponse;
+var _elm_lang$http$Http$expectJson = function (decoder) {
+	return _elm_lang$http$Http$expectStringResponse(
+		function (response) {
+			return A2(_elm_lang$core$Json_Decode$decodeString, decoder, response.body);
+		});
+};
+var _elm_lang$http$Http$expectString = _elm_lang$http$Http$expectStringResponse(
+	function (response) {
+		return _elm_lang$core$Result$Ok(response.body);
+	});
+var _elm_lang$http$Http$multipartBody = _elm_lang$http$Native_Http.multipart;
+var _elm_lang$http$Http$stringBody = _elm_lang$http$Http_Internal$StringBody;
+var _elm_lang$http$Http$jsonBody = function (value) {
+	return A2(
+		_elm_lang$http$Http_Internal$StringBody,
+		'application/json',
+		A2(_elm_lang$core$Json_Encode$encode, 0, value));
+};
+var _elm_lang$http$Http$emptyBody = _elm_lang$http$Http_Internal$EmptyBody;
+var _elm_lang$http$Http$header = _elm_lang$http$Http_Internal$Header;
+var _elm_lang$http$Http$request = _elm_lang$http$Http_Internal$Request;
+var _elm_lang$http$Http$post = F3(
+	function (url, body, decoder) {
+		return _elm_lang$http$Http$request(
+			{
+				method: 'POST',
+				headers: {ctor: '[]'},
+				url: url,
+				body: body,
+				expect: _elm_lang$http$Http$expectJson(decoder),
+				timeout: _elm_lang$core$Maybe$Nothing,
+				withCredentials: false
+			});
+	});
+var _elm_lang$http$Http$get = F2(
+	function (url, decoder) {
+		return _elm_lang$http$Http$request(
+			{
+				method: 'GET',
+				headers: {ctor: '[]'},
+				url: url,
+				body: _elm_lang$http$Http$emptyBody,
+				expect: _elm_lang$http$Http$expectJson(decoder),
+				timeout: _elm_lang$core$Maybe$Nothing,
+				withCredentials: false
+			});
+	});
+var _elm_lang$http$Http$getString = function (url) {
+	return _elm_lang$http$Http$request(
+		{
+			method: 'GET',
+			headers: {ctor: '[]'},
+			url: url,
+			body: _elm_lang$http$Http$emptyBody,
+			expect: _elm_lang$http$Http$expectString,
+			timeout: _elm_lang$core$Maybe$Nothing,
+			withCredentials: false
+		});
+};
+var _elm_lang$http$Http$toTask = function (_p0) {
+	var _p1 = _p0;
+	return A2(_elm_lang$http$Native_Http.toTask, _p1._0, _elm_lang$core$Maybe$Nothing);
+};
+var _elm_lang$http$Http$send = F2(
+	function (resultToMessage, request) {
+		return A2(
+			_elm_lang$core$Task$attempt,
+			resultToMessage,
+			_elm_lang$http$Http$toTask(request));
+	});
+var _elm_lang$http$Http$Response = F4(
+	function (a, b, c, d) {
+		return {url: a, status: b, headers: c, body: d};
+	});
+var _elm_lang$http$Http$BadPayload = F2(
+	function (a, b) {
+		return {ctor: 'BadPayload', _0: a, _1: b};
+	});
+var _elm_lang$http$Http$BadStatus = function (a) {
+	return {ctor: 'BadStatus', _0: a};
+};
+var _elm_lang$http$Http$NetworkError = {ctor: 'NetworkError'};
+var _elm_lang$http$Http$Timeout = {ctor: 'Timeout'};
+var _elm_lang$http$Http$BadUrl = function (a) {
+	return {ctor: 'BadUrl', _0: a};
+};
+var _elm_lang$http$Http$StringPart = F2(
+	function (a, b) {
+		return {ctor: 'StringPart', _0: a, _1: b};
+	});
+var _elm_lang$http$Http$stringPart = _elm_lang$http$Http$StringPart;
 
 var _elm_lang$navigation$Native_Navigation = function() {
 
@@ -13477,9 +13918,21 @@ var _user$project$Router$screenFromLocation = function (location) {
 	}
 };
 
-var _user$project$Signin_SigninModel$User = F6(
-	function (a, b, c, d, e, f) {
-		return {errors: a, email: b, password: c, showErrors: d, showPassword: e, formState: f};
+var _user$project$Signin_SigninModel$User = F2(
+	function (a, b) {
+		return {name: a, email: b};
+	});
+var _user$project$Signin_SigninModel$Login = F7(
+	function (a, b, c, d, e, f, g) {
+		return {errors: a, email: b, password: c, showErrors: d, showPassword: e, formState: f, success: g};
+	});
+var _user$project$Signin_SigninModel$Signedin = F2(
+	function (a, b) {
+		return {user: a, token: b};
+	});
+var _user$project$Signin_SigninModel$BackendError = F2(
+	function (a, b) {
+		return {status: a, error: b};
 	});
 var _user$project$Signin_SigninModel$Password = {ctor: 'Password'};
 var _user$project$Signin_SigninModel$Email = {ctor: 'Email'};
@@ -13491,19 +13944,185 @@ var _user$project$Signin_SigninModel$initialModel = {
 	password: '',
 	showErrors: false,
 	showPassword: false,
-	formState: _user$project$Signin_SigninModel$Editing
+	formState: _user$project$Signin_SigninModel$Editing,
+	success: false
 };
 
-var _user$project$Model$init = function (location) {
-	return {
-		screen: _user$project$Router$screenFromLocation(location),
-		signin: _user$project$Signin_SigninModel$initialModel
-	};
-};
-var _user$project$Model$Model = F2(
+var _user$project$Session_SessionModel$initialModel = {user: _elm_lang$core$Maybe$Nothing, token: _elm_lang$core$Maybe$Nothing};
+var _user$project$Session_SessionModel$Session = F2(
 	function (a, b) {
-		return {screen: a, signin: b};
+		return {user: a, token: b};
 	});
+
+var _user$project$Model$init = F2(
+	function (location, flags) {
+		return {
+			screen: _user$project$Router$screenFromLocation(location),
+			signin: _user$project$Signin_SigninModel$initialModel,
+			session: function () {
+				var _p0 = flags;
+				if (_p0.ctor === 'Just') {
+					return _p0._0;
+				} else {
+					return _user$project$Session_SessionModel$initialModel;
+				}
+			}()
+		};
+	});
+var _user$project$Model$Model = F3(
+	function (a, b, c) {
+		return {screen: a, signin: b, session: c};
+	});
+
+var _user$project$Signin_SigninMessage$OnSignin = function (a) {
+	return {ctor: 'OnSignin', _0: a};
+};
+var _user$project$Signin_SigninMessage$SetField = F2(
+	function (a, b) {
+		return {ctor: 'SetField', _0: a, _1: b};
+	});
+var _user$project$Signin_SigninMessage$SubmitForm = {ctor: 'SubmitForm'};
+var _user$project$Signin_SigninMessage$NoOp = {ctor: 'NoOp'};
+
+var _user$project$Signin_SigninSerializer$loginEncoder = function (login) {
+	var attributes = {
+		ctor: '::',
+		_0: {
+			ctor: '_Tuple2',
+			_0: 'email',
+			_1: _elm_lang$core$Json_Encode$string(login.email)
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: 'password',
+				_1: _elm_lang$core$Json_Encode$string(login.password)
+			},
+			_1: {ctor: '[]'}
+		}
+	};
+	return _elm_lang$core$Json_Encode$object(attributes);
+};
+var _user$project$Signin_SigninSerializer$userEncoder = function (user) {
+	var _p0 = user;
+	if (_p0.ctor === 'Nothing') {
+		return _elm_lang$core$Json_Encode$null;
+	} else {
+		var _p1 = _p0._0;
+		var attributes = {
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: 'name',
+				_1: _elm_lang$core$Json_Encode$string(_p1.name)
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'email',
+					_1: _elm_lang$core$Json_Encode$string(_p1.email)
+				},
+				_1: {ctor: '[]'}
+			}
+		};
+		return _elm_lang$core$Json_Encode$object(attributes);
+	}
+};
+var _user$project$Signin_SigninSerializer$userDecoder = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'email',
+	_elm_lang$core$Json_Decode$string,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'name',
+		_elm_lang$core$Json_Decode$string,
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Signin_SigninModel$User)));
+
+var _user$project$Session_SessionSerializer$sessionEncoder = function (session) {
+	var attributes = {
+		ctor: '::',
+		_0: {
+			ctor: '_Tuple2',
+			_0: 'user',
+			_1: _user$project$Signin_SigninSerializer$userEncoder(session.user)
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: 'token',
+				_1: function () {
+					var _p0 = session.token;
+					if (_p0.ctor === 'Nothing') {
+						return _elm_lang$core$Json_Encode$null;
+					} else {
+						return _elm_lang$core$Json_Encode$string(_p0._0);
+					}
+				}()
+			},
+			_1: {ctor: '[]'}
+		}
+	};
+	return _elm_lang$core$Json_Encode$object(attributes);
+};
+var _user$project$Session_SessionSerializer$sessionDecoder = A4(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+	'token',
+	A2(_elm_lang$core$Json_Decode$map, _elm_lang$core$Maybe$Just, _elm_lang$core$Json_Decode$string),
+	_elm_lang$core$Maybe$Nothing,
+	A4(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+		'user',
+		A2(_elm_lang$core$Json_Decode$map, _elm_lang$core$Maybe$Just, _user$project$Signin_SigninSerializer$userDecoder),
+		_elm_lang$core$Maybe$Nothing,
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Session_SessionModel$Session)));
+
+var _user$project$Signin_SigninCommand$errorDecoder = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'errors',
+	_elm_lang$core$Json_Decode$string,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'status',
+		_elm_lang$core$Json_Decode$string,
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Signin_SigninModel$BackendError)));
+var _user$project$Signin_SigninCommand$signinUrl = 'http://localhost:4000/api/v1/signin';
+var _user$project$Signin_SigninCommand$signinRequest = function (login) {
+	return _elm_lang$http$Http$request(
+		{
+			body: _elm_lang$http$Http$jsonBody(
+				_user$project$Signin_SigninSerializer$loginEncoder(login)),
+			expect: _elm_lang$http$Http$expectJson(_user$project$Session_SessionSerializer$sessionDecoder),
+			headers: {ctor: '[]'},
+			method: 'POST',
+			timeout: _elm_lang$core$Maybe$Nothing,
+			url: _user$project$Signin_SigninCommand$signinUrl,
+			withCredentials: false
+		});
+};
+var _user$project$Signin_SigninCommand$signinCmd = function (login) {
+	return A2(
+		_elm_lang$http$Http$send,
+		_user$project$Signin_SigninMessage$OnSignin,
+		_user$project$Signin_SigninCommand$signinRequest(login));
+};
+
+var _user$project$Session_SessionPort$storeSession = _elm_lang$core$Native_Platform.outgoingPort(
+	'storeSession',
+	function (v) {
+		return (v.ctor === 'Nothing') ? null : v._0;
+	});
+
+var _user$project$Session_SessionCommand$storeSessionCmd = function (session) {
+	return _user$project$Session_SessionPort$storeSession(
+		_elm_lang$core$Maybe$Just(
+			A2(
+				_elm_lang$core$Json_Encode$encode,
+				0,
+				_user$project$Session_SessionSerializer$sessionEncoder(session))));
+};
 
 var _user$project$Signin_SigninUpdate$validate = _rtfeldman$elm_validate$Validate$all(
 	{
@@ -13556,64 +14175,145 @@ var _user$project$Signin_SigninUpdate$setField = F3(
 				{password: value});
 		}
 	});
+var _user$project$Signin_SigninUpdate$httpErrorString = function (error) {
+	var _p4 = error;
+	switch (_p4.ctor) {
+		case 'BadUrl':
+			return A2(_elm_lang$core$Basics_ops['++'], 'Bad Url: ', _p4._0);
+		case 'Timeout':
+			return 'Http Timeout';
+		case 'NetworkError':
+			return 'Network Error';
+		case 'BadStatus':
+			var _p5 = A2(_elm_lang$core$Json_Decode$decodeString, _user$project$Signin_SigninCommand$errorDecoder, _p4._0.body);
+			if (_p5.ctor === 'Ok') {
+				return _p5._0.error;
+			} else {
+				return A2(_elm_lang$core$Basics_ops['++'], 'Invalid Data', _p5._0);
+			}
+		default:
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				'Bad Http Payload: ',
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(_p4._0),
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						' (',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_elm_lang$core$Basics$toString(_p4._1.status.code),
+							')'))));
+	}
+};
 var _user$project$Signin_SigninUpdate$update = F2(
 	function (msg, model) {
-		var _p4 = A2(_elm_lang$core$Debug$log, 'msg', msg);
-		switch (_p4.ctor) {
+		var _p6 = A2(_elm_lang$core$Debug$log, 'msg', msg);
+		switch (_p6.ctor) {
 			case 'NoOp':
 				return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 			case 'SubmitForm':
-				var _p5 = _user$project$Signin_SigninUpdate$validate(model.signin);
-				if (_p5.ctor === '[]') {
-					var user = A2(_elm_lang$core$Debug$log, 'sigin', model.signin);
+				var _p7 = _user$project$Signin_SigninUpdate$validate(model.signin);
+				if (_p7.ctor === '[]') {
+					var login = model.signin;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
 								signin: _elm_lang$core$Native_Utils.update(
-									user,
+									login,
 									{
 										errors: {ctor: '[]'},
 										formState: _user$project$Signin_SigninModel$Fetching
 									})
 							}),
-						_1: _elm_lang$core$Platform_Cmd$none
+						_1: _user$project$Signin_SigninCommand$signinCmd(login)
 					};
 				} else {
-					var user = A2(_elm_lang$core$Debug$log, 'sigin', model.signin);
+					var login = model.signin;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
 								signin: _elm_lang$core$Native_Utils.update(
-									user,
-									{errors: _p5, showErrors: true})
+									login,
+									{errors: _p7, showErrors: true})
+							}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				}
+			case 'OnSignin':
+				if (_p6._0.ctor === 'Ok') {
+					var _p8 = _p6._0._0;
+					var newSession = A2(
+						_elm_lang$core$Debug$log,
+						'newSession',
+						{user: _p8.user, token: _p8.token});
+					var login = model.signin;
+					var session = model.session;
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								session: newSession,
+								signin: _elm_lang$core$Native_Utils.update(
+									login,
+									{success: true, showErrors: false})
+							}),
+						_1: _elm_lang$core$Platform_Cmd$batch(
+							{
+								ctor: '::',
+								_0: _user$project$Session_SessionCommand$storeSessionCmd(newSession),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$navigation$Navigation$modifyUrl('/#'),
+									_1: {ctor: '[]'}
+								}
+							})
+					};
+				} else {
+					var login = model.signin;
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								signin: _elm_lang$core$Native_Utils.update(
+									login,
+									{
+										errors: {
+											ctor: '::',
+											_0: {
+												ctor: '_Tuple2',
+												_0: _user$project$Signin_SigninModel$Password,
+												_1: _user$project$Signin_SigninUpdate$httpErrorString(_p6._0._0)
+											},
+											_1: {ctor: '[]'}
+										},
+										showErrors: true
+									})
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
 				}
 			default:
-				var user = model.signin;
+				var login = model.signin;
 				return {
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
 							signin: _user$project$Signin_SigninUpdate$setErrors(
-								A3(_user$project$Signin_SigninUpdate$setField, _p4._0, _p4._1, user))
+								A3(_user$project$Signin_SigninUpdate$setField, _p6._0, _p6._1, login))
 						}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
 		}
 	});
-var _user$project$Signin_SigninUpdate$SetField = F2(
-	function (a, b) {
-		return {ctor: 'SetField', _0: a, _1: b};
-	});
-var _user$project$Signin_SigninUpdate$SubmitForm = {ctor: 'SubmitForm'};
-var _user$project$Signin_SigninUpdate$NoOp = {ctor: 'NoOp'};
 
 var _user$project$Update$wrapScreen = F2(
 	function (toMsg, _p0) {
@@ -13731,7 +14431,7 @@ var _user$project$Signin_SigninView$viewInput = F5(
 							_1: {
 								ctor: '::',
 								_0: _rundis$elm_bootstrap$Bootstrap_Form_Input$onInput(
-									_user$project$Signin_SigninUpdate$SetField(formField)),
+									_user$project$Signin_SigninMessage$SetField(formField)),
 								_1: {ctor: '[]'}
 							}
 						}),
@@ -13762,7 +14462,7 @@ var _user$project$Signin_SigninView$form = function (model) {
 							_0: _rundis$elm_bootstrap$Bootstrap_Button$primary,
 							_1: {
 								ctor: '::',
-								_0: _rundis$elm_bootstrap$Bootstrap_Button$onClick(_user$project$Signin_SigninUpdate$SubmitForm),
+								_0: _rundis$elm_bootstrap$Bootstrap_Button$onClick(_user$project$Signin_SigninMessage$SubmitForm),
 								_1: {ctor: '[]'}
 							}
 						},
@@ -13777,6 +14477,7 @@ var _user$project$Signin_SigninView$form = function (model) {
 		});
 };
 var _user$project$Signin_SigninView$view = function (model) {
+	var _p5 = A2(_elm_lang$core$Debug$log, 'foo', model);
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
@@ -13838,8 +14539,9 @@ var _user$project$Signin_SigninView$view = function (model) {
 
 var _user$project$View$wrapScreen = _elm_lang$html$Html$map;
 var _user$project$View$view = function (model) {
-	var _p0 = model.screen;
-	switch (_p0.ctor) {
+	var _p0 = A2(_elm_lang$core$Debug$log, 'main foo', model);
+	var _p1 = model.screen;
+	switch (_p1.ctor) {
 		case 'Main':
 			return A2(
 				_elm_lang$html$Html$div,
@@ -13875,23 +14577,87 @@ var _user$project$View$view = function (model) {
 	}
 };
 
-var _user$project$Main$init = function (location) {
-	return A2(
-		_elm_lang$core$Platform_Cmd_ops['!'],
-		_user$project$Model$init(location),
-		{ctor: '[]'});
-};
+var _user$project$Main$init = F2(
+	function (flags, location) {
+		var _p0 = A2(_elm_lang$core$Debug$log, 'flags', flags);
+		return A2(
+			_elm_lang$core$Platform_Cmd_ops['!'],
+			A2(_user$project$Model$init, location, flags),
+			{ctor: '[]'});
+	});
 var _user$project$Main$main = A2(
-	_elm_lang$navigation$Navigation$program,
+	_elm_lang$navigation$Navigation$programWithFlags,
 	_user$project$Update$ChangeLocation,
 	{
 		init: _user$project$Main$init,
 		view: _user$project$View$view,
 		update: _user$project$Update$update,
-		subscriptions: function (_p0) {
+		subscriptions: function (_p1) {
 			return _elm_lang$core$Platform_Sub$none;
 		}
-	})();
+	})(
+	_elm_lang$core$Json_Decode$oneOf(
+		{
+			ctor: '::',
+			_0: _elm_lang$core$Json_Decode$null(_elm_lang$core$Maybe$Nothing),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$core$Json_Decode$map,
+					_elm_lang$core$Maybe$Just,
+					A2(
+						_elm_lang$core$Json_Decode$andThen,
+						function (token) {
+							return A2(
+								_elm_lang$core$Json_Decode$andThen,
+								function (user) {
+									return _elm_lang$core$Json_Decode$succeed(
+										{token: token, user: user});
+								},
+								A2(
+									_elm_lang$core$Json_Decode$field,
+									'user',
+									_elm_lang$core$Json_Decode$oneOf(
+										{
+											ctor: '::',
+											_0: _elm_lang$core$Json_Decode$null(_elm_lang$core$Maybe$Nothing),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$core$Json_Decode$map,
+													_elm_lang$core$Maybe$Just,
+													A2(
+														_elm_lang$core$Json_Decode$andThen,
+														function (email) {
+															return A2(
+																_elm_lang$core$Json_Decode$andThen,
+																function (name) {
+																	return _elm_lang$core$Json_Decode$succeed(
+																		{email: email, name: name});
+																},
+																A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string));
+														},
+														A2(_elm_lang$core$Json_Decode$field, 'email', _elm_lang$core$Json_Decode$string))),
+												_1: {ctor: '[]'}
+											}
+										})));
+						},
+						A2(
+							_elm_lang$core$Json_Decode$field,
+							'token',
+							_elm_lang$core$Json_Decode$oneOf(
+								{
+									ctor: '::',
+									_0: _elm_lang$core$Json_Decode$null(_elm_lang$core$Maybe$Nothing),
+									_1: {
+										ctor: '::',
+										_0: A2(_elm_lang$core$Json_Decode$map, _elm_lang$core$Maybe$Just, _elm_lang$core$Json_Decode$string),
+										_1: {ctor: '[]'}
+									}
+								})))),
+				_1: {ctor: '[]'}
+			}
+		}));
 
 var Elm = {};
 Elm['Main'] = Elm['Main'] || {};

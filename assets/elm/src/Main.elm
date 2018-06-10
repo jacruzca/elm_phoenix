@@ -4,11 +4,12 @@ import Navigation
 import View
 import Update
 import Model exposing (Model)
+import Session.SessionModel
 
 
-main : Program Never Model Update.Msg
+main : Program (Maybe Session.SessionModel.Session) Model Update.Msg
 main =
-    Navigation.program
+    Navigation.programWithFlags
         Update.ChangeLocation
         { init = init
         , view = View.view
@@ -17,7 +18,11 @@ main =
         }
 
 
-init : Navigation.Location -> ( Model, Cmd Update.Msg )
-init location =
-    Model.init location
-        ! []
+init : Maybe Session.SessionModel.Session -> Navigation.Location -> ( Model, Cmd Update.Msg )
+init flags location =
+    let
+        _ =
+            Debug.log "flags" flags
+    in
+        Model.init location flags
+            ! []
