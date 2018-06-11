@@ -39394,6 +39394,462 @@ var _rundis$elm_bootstrap$Bootstrap_Navbar$dropdownHeader = function (children) 
 			children));
 };
 
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py5Xl = _elm_lang$html$Html_Attributes$class('py-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py4Xl = _elm_lang$html$Html_Attributes$class('py-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py3Xl = _elm_lang$html$Html_Attributes$class('py-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py2Xl = _elm_lang$html$Html_Attributes$class('py-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py1Xl = _elm_lang$html$Html_Attributes$class('py-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py0Xl = _elm_lang$html$Html_Attributes$class('py-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px5Xl = _elm_lang$html$Html_Attributes$class('px-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px4Xl = _elm_lang$html$Html_Attributes$class('px-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px3Xl = _elm_lang$html$Html_Attributes$class('px-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px2Xl = _elm_lang$html$Html_Attributes$class('px-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px1Xl = _elm_lang$html$Html_Attributes$class('px-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px0Xl = _elm_lang$html$Html_Attributes$class('px-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr5Xl = _elm_lang$html$Html_Attributes$class('pr-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr4Xl = _elm_lang$html$Html_Attributes$class('pr-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr3Xl = _elm_lang$html$Html_Attributes$class('pr-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr2Xl = _elm_lang$html$Html_Attributes$class('pr-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr1Xl = _elm_lang$html$Html_Attributes$class('pr-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr0Xl = _elm_lang$html$Html_Attributes$class('pr-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl5Xl = _elm_lang$html$Html_Attributes$class('pl-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl4Xl = _elm_lang$html$Html_Attributes$class('pl-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl3Xl = _elm_lang$html$Html_Attributes$class('pl-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl2Xl = _elm_lang$html$Html_Attributes$class('pl-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl1Xl = _elm_lang$html$Html_Attributes$class('pl-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl0Xl = _elm_lang$html$Html_Attributes$class('pl-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb5Xl = _elm_lang$html$Html_Attributes$class('pb-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb4Xl = _elm_lang$html$Html_Attributes$class('pb-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb3Xl = _elm_lang$html$Html_Attributes$class('pb-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb2Xl = _elm_lang$html$Html_Attributes$class('pb-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb1Xl = _elm_lang$html$Html_Attributes$class('pb-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb0Xl = _elm_lang$html$Html_Attributes$class('pb-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt5Xl = _elm_lang$html$Html_Attributes$class('pt-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt4Xl = _elm_lang$html$Html_Attributes$class('pt-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt3Xl = _elm_lang$html$Html_Attributes$class('pt-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt2Xl = _elm_lang$html$Html_Attributes$class('pt-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt1Xl = _elm_lang$html$Html_Attributes$class('pt-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt0Xl = _elm_lang$html$Html_Attributes$class('pt-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p5Xl = _elm_lang$html$Html_Attributes$class('p-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p4Xl = _elm_lang$html$Html_Attributes$class('p-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p3Xl = _elm_lang$html$Html_Attributes$class('p-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p2Xl = _elm_lang$html$Html_Attributes$class('p-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p1Xl = _elm_lang$html$Html_Attributes$class('p-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p0Xl = _elm_lang$html$Html_Attributes$class('p-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py5Lg = _elm_lang$html$Html_Attributes$class('py-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py4Lg = _elm_lang$html$Html_Attributes$class('py-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py3Lg = _elm_lang$html$Html_Attributes$class('py-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py2Lg = _elm_lang$html$Html_Attributes$class('py-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py1Lg = _elm_lang$html$Html_Attributes$class('py-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py0Lg = _elm_lang$html$Html_Attributes$class('py-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px5Lg = _elm_lang$html$Html_Attributes$class('px-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px4Lg = _elm_lang$html$Html_Attributes$class('px-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px3Lg = _elm_lang$html$Html_Attributes$class('px-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px2Lg = _elm_lang$html$Html_Attributes$class('px-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px1Lg = _elm_lang$html$Html_Attributes$class('px-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px0Lg = _elm_lang$html$Html_Attributes$class('px-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr5Lg = _elm_lang$html$Html_Attributes$class('pr-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr4Lg = _elm_lang$html$Html_Attributes$class('pr-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr3Lg = _elm_lang$html$Html_Attributes$class('pr-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr2Lg = _elm_lang$html$Html_Attributes$class('pr-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr1Lg = _elm_lang$html$Html_Attributes$class('pr-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr0Lg = _elm_lang$html$Html_Attributes$class('pr-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl5Lg = _elm_lang$html$Html_Attributes$class('pl-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl4Lg = _elm_lang$html$Html_Attributes$class('pl-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl3Lg = _elm_lang$html$Html_Attributes$class('pl-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl2Lg = _elm_lang$html$Html_Attributes$class('pl-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl1Lg = _elm_lang$html$Html_Attributes$class('pl-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl0Lg = _elm_lang$html$Html_Attributes$class('pl-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb5Lg = _elm_lang$html$Html_Attributes$class('pb-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb4Lg = _elm_lang$html$Html_Attributes$class('pb-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb3Lg = _elm_lang$html$Html_Attributes$class('pb-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb2Lg = _elm_lang$html$Html_Attributes$class('pb-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb1Lg = _elm_lang$html$Html_Attributes$class('pb-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb0Lg = _elm_lang$html$Html_Attributes$class('pb-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt5Lg = _elm_lang$html$Html_Attributes$class('pt-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt4Lg = _elm_lang$html$Html_Attributes$class('pt-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt3Lg = _elm_lang$html$Html_Attributes$class('pt-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt2Lg = _elm_lang$html$Html_Attributes$class('pt-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt1Lg = _elm_lang$html$Html_Attributes$class('pt-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt0Lg = _elm_lang$html$Html_Attributes$class('pt-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p5Lg = _elm_lang$html$Html_Attributes$class('p-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p4Lg = _elm_lang$html$Html_Attributes$class('p-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p3Lg = _elm_lang$html$Html_Attributes$class('p-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p2Lg = _elm_lang$html$Html_Attributes$class('p-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p1Lg = _elm_lang$html$Html_Attributes$class('p-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p0Lg = _elm_lang$html$Html_Attributes$class('p-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py5Md = _elm_lang$html$Html_Attributes$class('py-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py4Md = _elm_lang$html$Html_Attributes$class('py-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py3Md = _elm_lang$html$Html_Attributes$class('py-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py2Md = _elm_lang$html$Html_Attributes$class('py-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py1Md = _elm_lang$html$Html_Attributes$class('py-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py0Md = _elm_lang$html$Html_Attributes$class('py-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px5Md = _elm_lang$html$Html_Attributes$class('px-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px4Md = _elm_lang$html$Html_Attributes$class('px-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px3Md = _elm_lang$html$Html_Attributes$class('px-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px2Md = _elm_lang$html$Html_Attributes$class('px-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px1Md = _elm_lang$html$Html_Attributes$class('px-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px0Md = _elm_lang$html$Html_Attributes$class('px-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr5Md = _elm_lang$html$Html_Attributes$class('pr-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr4Md = _elm_lang$html$Html_Attributes$class('pr-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr3Md = _elm_lang$html$Html_Attributes$class('pr-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr2Md = _elm_lang$html$Html_Attributes$class('pr-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr1Md = _elm_lang$html$Html_Attributes$class('pr-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr0Md = _elm_lang$html$Html_Attributes$class('pr-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl5Md = _elm_lang$html$Html_Attributes$class('pl-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl4Md = _elm_lang$html$Html_Attributes$class('pl-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl3Md = _elm_lang$html$Html_Attributes$class('pl-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl2Md = _elm_lang$html$Html_Attributes$class('pl-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl1Md = _elm_lang$html$Html_Attributes$class('pl-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl0Md = _elm_lang$html$Html_Attributes$class('pl-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb5Md = _elm_lang$html$Html_Attributes$class('pb-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb4Md = _elm_lang$html$Html_Attributes$class('pb-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb3Md = _elm_lang$html$Html_Attributes$class('pb-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb2Md = _elm_lang$html$Html_Attributes$class('pb-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb1Md = _elm_lang$html$Html_Attributes$class('pb-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb0Md = _elm_lang$html$Html_Attributes$class('pb-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt5Md = _elm_lang$html$Html_Attributes$class('pt-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt4Md = _elm_lang$html$Html_Attributes$class('pt-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt3Md = _elm_lang$html$Html_Attributes$class('pt-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt2Md = _elm_lang$html$Html_Attributes$class('pt-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt1Md = _elm_lang$html$Html_Attributes$class('pt-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt0Md = _elm_lang$html$Html_Attributes$class('pt-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p5Md = _elm_lang$html$Html_Attributes$class('p-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p4Md = _elm_lang$html$Html_Attributes$class('p-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p3Md = _elm_lang$html$Html_Attributes$class('p-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p2Md = _elm_lang$html$Html_Attributes$class('p-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p1Md = _elm_lang$html$Html_Attributes$class('p-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p0Md = _elm_lang$html$Html_Attributes$class('p-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py5Sm = _elm_lang$html$Html_Attributes$class('py-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py4Sm = _elm_lang$html$Html_Attributes$class('py-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py3Sm = _elm_lang$html$Html_Attributes$class('py-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py2Sm = _elm_lang$html$Html_Attributes$class('py-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py1Sm = _elm_lang$html$Html_Attributes$class('py-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py0Sm = _elm_lang$html$Html_Attributes$class('py-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px5Sm = _elm_lang$html$Html_Attributes$class('px-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px4Sm = _elm_lang$html$Html_Attributes$class('px-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px3Sm = _elm_lang$html$Html_Attributes$class('px-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px2Sm = _elm_lang$html$Html_Attributes$class('px-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px1Sm = _elm_lang$html$Html_Attributes$class('px-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px0Sm = _elm_lang$html$Html_Attributes$class('px-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr5Sm = _elm_lang$html$Html_Attributes$class('pr-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr4Sm = _elm_lang$html$Html_Attributes$class('pr-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr3Sm = _elm_lang$html$Html_Attributes$class('pr-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr2Sm = _elm_lang$html$Html_Attributes$class('pr-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr1Sm = _elm_lang$html$Html_Attributes$class('pr-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr0Sm = _elm_lang$html$Html_Attributes$class('pr-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl5Sm = _elm_lang$html$Html_Attributes$class('pl-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl4Sm = _elm_lang$html$Html_Attributes$class('pl-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl3Sm = _elm_lang$html$Html_Attributes$class('pl-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl2Sm = _elm_lang$html$Html_Attributes$class('pl-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl1Sm = _elm_lang$html$Html_Attributes$class('pl-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl0Sm = _elm_lang$html$Html_Attributes$class('pl-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb5Sm = _elm_lang$html$Html_Attributes$class('pb-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb4Sm = _elm_lang$html$Html_Attributes$class('pb-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb3Sm = _elm_lang$html$Html_Attributes$class('pb-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb2Sm = _elm_lang$html$Html_Attributes$class('pb-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb1Sm = _elm_lang$html$Html_Attributes$class('pb-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb0Sm = _elm_lang$html$Html_Attributes$class('pb-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt5Sm = _elm_lang$html$Html_Attributes$class('pt-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt4Sm = _elm_lang$html$Html_Attributes$class('pt-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt3Sm = _elm_lang$html$Html_Attributes$class('pt-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt2Sm = _elm_lang$html$Html_Attributes$class('pt-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt1Sm = _elm_lang$html$Html_Attributes$class('pt-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt0Sm = _elm_lang$html$Html_Attributes$class('pt-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p5Sm = _elm_lang$html$Html_Attributes$class('p-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p4Sm = _elm_lang$html$Html_Attributes$class('p-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p3Sm = _elm_lang$html$Html_Attributes$class('p-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p2Sm = _elm_lang$html$Html_Attributes$class('p-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p1Sm = _elm_lang$html$Html_Attributes$class('p-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p0Sm = _elm_lang$html$Html_Attributes$class('p-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py5 = _elm_lang$html$Html_Attributes$class('py-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py4 = _elm_lang$html$Html_Attributes$class('py-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py3 = _elm_lang$html$Html_Attributes$class('py-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py2 = _elm_lang$html$Html_Attributes$class('py-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py1 = _elm_lang$html$Html_Attributes$class('py-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$py0 = _elm_lang$html$Html_Attributes$class('py-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px5 = _elm_lang$html$Html_Attributes$class('px-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px4 = _elm_lang$html$Html_Attributes$class('px-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px3 = _elm_lang$html$Html_Attributes$class('px-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px2 = _elm_lang$html$Html_Attributes$class('px-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px1 = _elm_lang$html$Html_Attributes$class('px-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$px0 = _elm_lang$html$Html_Attributes$class('px-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr5 = _elm_lang$html$Html_Attributes$class('pr-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr4 = _elm_lang$html$Html_Attributes$class('pr-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr3 = _elm_lang$html$Html_Attributes$class('pr-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr2 = _elm_lang$html$Html_Attributes$class('pr-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr1 = _elm_lang$html$Html_Attributes$class('pr-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pr0 = _elm_lang$html$Html_Attributes$class('pr-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl5 = _elm_lang$html$Html_Attributes$class('pl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl4 = _elm_lang$html$Html_Attributes$class('pl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl3 = _elm_lang$html$Html_Attributes$class('pl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl2 = _elm_lang$html$Html_Attributes$class('pl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl1 = _elm_lang$html$Html_Attributes$class('pl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pl0 = _elm_lang$html$Html_Attributes$class('pl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb5 = _elm_lang$html$Html_Attributes$class('pb-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb4 = _elm_lang$html$Html_Attributes$class('pb-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb3 = _elm_lang$html$Html_Attributes$class('pb-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb2 = _elm_lang$html$Html_Attributes$class('pb-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb1 = _elm_lang$html$Html_Attributes$class('pb-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pb0 = _elm_lang$html$Html_Attributes$class('pb-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt5 = _elm_lang$html$Html_Attributes$class('pt-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt4 = _elm_lang$html$Html_Attributes$class('pt-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt3 = _elm_lang$html$Html_Attributes$class('pt-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt2 = _elm_lang$html$Html_Attributes$class('pt-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt1 = _elm_lang$html$Html_Attributes$class('pt-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$pt0 = _elm_lang$html$Html_Attributes$class('pt-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p5 = _elm_lang$html$Html_Attributes$class('p-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p4 = _elm_lang$html$Html_Attributes$class('p-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p3 = _elm_lang$html$Html_Attributes$class('p-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p2 = _elm_lang$html$Html_Attributes$class('p-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p1 = _elm_lang$html$Html_Attributes$class('p-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$p0 = _elm_lang$html$Html_Attributes$class('p-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$myAutoXl = _elm_lang$html$Html_Attributes$class('my-xl-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my5Xl = _elm_lang$html$Html_Attributes$class('my-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my4Xl = _elm_lang$html$Html_Attributes$class('my-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my3Xl = _elm_lang$html$Html_Attributes$class('my-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my2Xl = _elm_lang$html$Html_Attributes$class('my-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my1Xl = _elm_lang$html$Html_Attributes$class('my-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my0Xl = _elm_lang$html$Html_Attributes$class('my-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mxAutoXl = _elm_lang$html$Html_Attributes$class('mx-xl-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx5Xl = _elm_lang$html$Html_Attributes$class('mx-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx4Xl = _elm_lang$html$Html_Attributes$class('mx-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx3Xl = _elm_lang$html$Html_Attributes$class('mx-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx2Xl = _elm_lang$html$Html_Attributes$class('mx-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx1Xl = _elm_lang$html$Html_Attributes$class('mx-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx0Xl = _elm_lang$html$Html_Attributes$class('mx-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mrAutoXl = _elm_lang$html$Html_Attributes$class('mr-xl-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr5Xl = _elm_lang$html$Html_Attributes$class('mr-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr4Xl = _elm_lang$html$Html_Attributes$class('mr-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr3Xl = _elm_lang$html$Html_Attributes$class('mr-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr2Xl = _elm_lang$html$Html_Attributes$class('mr-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr1Xl = _elm_lang$html$Html_Attributes$class('mr-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr0Xl = _elm_lang$html$Html_Attributes$class('mr-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mlAutoXl = _elm_lang$html$Html_Attributes$class('ml-xl-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml5Xl = _elm_lang$html$Html_Attributes$class('ml-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml4Xl = _elm_lang$html$Html_Attributes$class('ml-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml3Xl = _elm_lang$html$Html_Attributes$class('ml-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml2Xl = _elm_lang$html$Html_Attributes$class('ml-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml1Xl = _elm_lang$html$Html_Attributes$class('ml-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml0Xl = _elm_lang$html$Html_Attributes$class('ml-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mbAutoXl = _elm_lang$html$Html_Attributes$class('mb-xl-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb5Xl = _elm_lang$html$Html_Attributes$class('mb-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb4Xl = _elm_lang$html$Html_Attributes$class('mb-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb3Xl = _elm_lang$html$Html_Attributes$class('mb-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb2Xl = _elm_lang$html$Html_Attributes$class('mb-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb1Xl = _elm_lang$html$Html_Attributes$class('mb-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb0Xl = _elm_lang$html$Html_Attributes$class('mb-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mtAutoXl = _elm_lang$html$Html_Attributes$class('mt-xl-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt5Xl = _elm_lang$html$Html_Attributes$class('mt-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt4Xl = _elm_lang$html$Html_Attributes$class('mt-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt3Xl = _elm_lang$html$Html_Attributes$class('mt-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt2Xl = _elm_lang$html$Html_Attributes$class('mt-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt1Xl = _elm_lang$html$Html_Attributes$class('mt-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt0Xl = _elm_lang$html$Html_Attributes$class('mt-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mAutoXl = _elm_lang$html$Html_Attributes$class('m-xl-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m5Xl = _elm_lang$html$Html_Attributes$class('m-xl-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m4Xl = _elm_lang$html$Html_Attributes$class('m-xl-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m3Xl = _elm_lang$html$Html_Attributes$class('m-xl-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m2Xl = _elm_lang$html$Html_Attributes$class('m-xl-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m1Xl = _elm_lang$html$Html_Attributes$class('m-xl-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m0Xl = _elm_lang$html$Html_Attributes$class('m-xl-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$myAutoLg = _elm_lang$html$Html_Attributes$class('my-lg-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my5Lg = _elm_lang$html$Html_Attributes$class('my-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my4Lg = _elm_lang$html$Html_Attributes$class('my-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my3Lg = _elm_lang$html$Html_Attributes$class('my-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my2Lg = _elm_lang$html$Html_Attributes$class('my-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my1Lg = _elm_lang$html$Html_Attributes$class('my-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my0Lg = _elm_lang$html$Html_Attributes$class('my-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mxAutoLg = _elm_lang$html$Html_Attributes$class('mx-lg-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx5Lg = _elm_lang$html$Html_Attributes$class('mx-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx4Lg = _elm_lang$html$Html_Attributes$class('mx-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx3Lg = _elm_lang$html$Html_Attributes$class('mx-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx2Lg = _elm_lang$html$Html_Attributes$class('mx-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx1Lg = _elm_lang$html$Html_Attributes$class('mx-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx0Lg = _elm_lang$html$Html_Attributes$class('mx-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mrAutoLg = _elm_lang$html$Html_Attributes$class('mr-lg-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr5Lg = _elm_lang$html$Html_Attributes$class('mr-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr4Lg = _elm_lang$html$Html_Attributes$class('mr-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr3Lg = _elm_lang$html$Html_Attributes$class('mr-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr2Lg = _elm_lang$html$Html_Attributes$class('mr-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr1Lg = _elm_lang$html$Html_Attributes$class('mr-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr0Lg = _elm_lang$html$Html_Attributes$class('mr-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mlAutoLg = _elm_lang$html$Html_Attributes$class('ml-lg-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml5Lg = _elm_lang$html$Html_Attributes$class('ml-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml4Lg = _elm_lang$html$Html_Attributes$class('ml-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml3Lg = _elm_lang$html$Html_Attributes$class('ml-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml2Lg = _elm_lang$html$Html_Attributes$class('ml-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml1Lg = _elm_lang$html$Html_Attributes$class('ml-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml0Lg = _elm_lang$html$Html_Attributes$class('ml-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mbAutoLg = _elm_lang$html$Html_Attributes$class('mb-lg-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb5Lg = _elm_lang$html$Html_Attributes$class('mb-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb4Lg = _elm_lang$html$Html_Attributes$class('mb-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb3Lg = _elm_lang$html$Html_Attributes$class('mb-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb2Lg = _elm_lang$html$Html_Attributes$class('mb-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb1Lg = _elm_lang$html$Html_Attributes$class('mb-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb0Lg = _elm_lang$html$Html_Attributes$class('mb-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mtAutoLg = _elm_lang$html$Html_Attributes$class('mt-lg-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt5Lg = _elm_lang$html$Html_Attributes$class('mt-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt4Lg = _elm_lang$html$Html_Attributes$class('mt-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt3Lg = _elm_lang$html$Html_Attributes$class('mt-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt2Lg = _elm_lang$html$Html_Attributes$class('mt-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt1Lg = _elm_lang$html$Html_Attributes$class('mt-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt0Lg = _elm_lang$html$Html_Attributes$class('mt-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mAutoLg = _elm_lang$html$Html_Attributes$class('m-lg-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m5Lg = _elm_lang$html$Html_Attributes$class('m-lg-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m4Lg = _elm_lang$html$Html_Attributes$class('m-lg-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m3Lg = _elm_lang$html$Html_Attributes$class('m-lg-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m2Lg = _elm_lang$html$Html_Attributes$class('m-lg-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m1Lg = _elm_lang$html$Html_Attributes$class('m-lg-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m0Lg = _elm_lang$html$Html_Attributes$class('m-lg-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$myAutoMd = _elm_lang$html$Html_Attributes$class('my-md-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my5Md = _elm_lang$html$Html_Attributes$class('my-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my4Md = _elm_lang$html$Html_Attributes$class('my-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my3Md = _elm_lang$html$Html_Attributes$class('my-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my2Md = _elm_lang$html$Html_Attributes$class('my-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my1Md = _elm_lang$html$Html_Attributes$class('my-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my0Md = _elm_lang$html$Html_Attributes$class('my-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mxAutoMd = _elm_lang$html$Html_Attributes$class('mx-md-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx5Md = _elm_lang$html$Html_Attributes$class('mx-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx4Md = _elm_lang$html$Html_Attributes$class('mx-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx3Md = _elm_lang$html$Html_Attributes$class('mx-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx2Md = _elm_lang$html$Html_Attributes$class('mx-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx1Md = _elm_lang$html$Html_Attributes$class('mx-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx0Md = _elm_lang$html$Html_Attributes$class('mx-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mrAutoMd = _elm_lang$html$Html_Attributes$class('mr-md-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr5Md = _elm_lang$html$Html_Attributes$class('mr-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr4Md = _elm_lang$html$Html_Attributes$class('mr-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr3Md = _elm_lang$html$Html_Attributes$class('mr-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr2Md = _elm_lang$html$Html_Attributes$class('mr-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr1Md = _elm_lang$html$Html_Attributes$class('mr-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr0Md = _elm_lang$html$Html_Attributes$class('mr-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mlAutoMd = _elm_lang$html$Html_Attributes$class('ml-md-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml5Md = _elm_lang$html$Html_Attributes$class('ml-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml4Md = _elm_lang$html$Html_Attributes$class('ml-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml3Md = _elm_lang$html$Html_Attributes$class('ml-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml2Md = _elm_lang$html$Html_Attributes$class('ml-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml1Md = _elm_lang$html$Html_Attributes$class('ml-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml0Md = _elm_lang$html$Html_Attributes$class('ml-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mbAutoMd = _elm_lang$html$Html_Attributes$class('mb-md-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb5Md = _elm_lang$html$Html_Attributes$class('mb-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb4Md = _elm_lang$html$Html_Attributes$class('mb-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb3Md = _elm_lang$html$Html_Attributes$class('mb-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb2Md = _elm_lang$html$Html_Attributes$class('mb-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb1Md = _elm_lang$html$Html_Attributes$class('mb-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb0Md = _elm_lang$html$Html_Attributes$class('mb-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mtAutoMd = _elm_lang$html$Html_Attributes$class('mt-md-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt5Md = _elm_lang$html$Html_Attributes$class('mt-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt4Md = _elm_lang$html$Html_Attributes$class('mt-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt3Md = _elm_lang$html$Html_Attributes$class('mt-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt2Md = _elm_lang$html$Html_Attributes$class('mt-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt1Md = _elm_lang$html$Html_Attributes$class('mt-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt0Md = _elm_lang$html$Html_Attributes$class('mt-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mAutoMd = _elm_lang$html$Html_Attributes$class('m-md-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m5Md = _elm_lang$html$Html_Attributes$class('m-md-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m4Md = _elm_lang$html$Html_Attributes$class('m-md-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m3Md = _elm_lang$html$Html_Attributes$class('m-md-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m2Md = _elm_lang$html$Html_Attributes$class('m-md-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m1Md = _elm_lang$html$Html_Attributes$class('m-md-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m0Md = _elm_lang$html$Html_Attributes$class('m-md-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$myAutoSm = _elm_lang$html$Html_Attributes$class('my-sm-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my5Sm = _elm_lang$html$Html_Attributes$class('my-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my4Sm = _elm_lang$html$Html_Attributes$class('my-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my3Sm = _elm_lang$html$Html_Attributes$class('my-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my2Sm = _elm_lang$html$Html_Attributes$class('my-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my1Sm = _elm_lang$html$Html_Attributes$class('my-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my0Sm = _elm_lang$html$Html_Attributes$class('my-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mxAutoSm = _elm_lang$html$Html_Attributes$class('mx-sm-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx5Sm = _elm_lang$html$Html_Attributes$class('mx-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx4Sm = _elm_lang$html$Html_Attributes$class('mx-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx3Sm = _elm_lang$html$Html_Attributes$class('mx-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx2Sm = _elm_lang$html$Html_Attributes$class('mx-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx1Sm = _elm_lang$html$Html_Attributes$class('mx-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx0Sm = _elm_lang$html$Html_Attributes$class('mx-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mrAutoSm = _elm_lang$html$Html_Attributes$class('mr-sm-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr5Sm = _elm_lang$html$Html_Attributes$class('mr-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr4Sm = _elm_lang$html$Html_Attributes$class('mr-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr3Sm = _elm_lang$html$Html_Attributes$class('mr-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr2Sm = _elm_lang$html$Html_Attributes$class('mr-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr1Sm = _elm_lang$html$Html_Attributes$class('mr-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr0Sm = _elm_lang$html$Html_Attributes$class('mr-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mlAutoSm = _elm_lang$html$Html_Attributes$class('ml-sm-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml5Sm = _elm_lang$html$Html_Attributes$class('ml-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml4Sm = _elm_lang$html$Html_Attributes$class('ml-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml3Sm = _elm_lang$html$Html_Attributes$class('ml-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml2Sm = _elm_lang$html$Html_Attributes$class('ml-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml1Sm = _elm_lang$html$Html_Attributes$class('ml-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml0Sm = _elm_lang$html$Html_Attributes$class('ml-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mbAutoSm = _elm_lang$html$Html_Attributes$class('mb-sm-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb5Sm = _elm_lang$html$Html_Attributes$class('mb-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb4Sm = _elm_lang$html$Html_Attributes$class('mb-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb3Sm = _elm_lang$html$Html_Attributes$class('mb-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb2Sm = _elm_lang$html$Html_Attributes$class('mb-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb1Sm = _elm_lang$html$Html_Attributes$class('mb-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb0Sm = _elm_lang$html$Html_Attributes$class('mb-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mtAutoSm = _elm_lang$html$Html_Attributes$class('mt-sm-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt5Sm = _elm_lang$html$Html_Attributes$class('mt-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt4Sm = _elm_lang$html$Html_Attributes$class('mt-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt3Sm = _elm_lang$html$Html_Attributes$class('mt-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt2Sm = _elm_lang$html$Html_Attributes$class('mt-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt1Sm = _elm_lang$html$Html_Attributes$class('mt-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt0Sm = _elm_lang$html$Html_Attributes$class('mt-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mAutoSm = _elm_lang$html$Html_Attributes$class('m-sm-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m5Sm = _elm_lang$html$Html_Attributes$class('m-sm-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m4Sm = _elm_lang$html$Html_Attributes$class('m-sm-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m3Sm = _elm_lang$html$Html_Attributes$class('m-sm-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m2Sm = _elm_lang$html$Html_Attributes$class('m-sm-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m1Sm = _elm_lang$html$Html_Attributes$class('m-sm-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m0Sm = _elm_lang$html$Html_Attributes$class('m-sm-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$myAuto = _elm_lang$html$Html_Attributes$class('my-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my5 = _elm_lang$html$Html_Attributes$class('my-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my4 = _elm_lang$html$Html_Attributes$class('my-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my3 = _elm_lang$html$Html_Attributes$class('my-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my2 = _elm_lang$html$Html_Attributes$class('my-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my1 = _elm_lang$html$Html_Attributes$class('my-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$my0 = _elm_lang$html$Html_Attributes$class('my-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mxAuto = _elm_lang$html$Html_Attributes$class('mx-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx5 = _elm_lang$html$Html_Attributes$class('mx-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx4 = _elm_lang$html$Html_Attributes$class('mx-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx3 = _elm_lang$html$Html_Attributes$class('mx-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx2 = _elm_lang$html$Html_Attributes$class('mx-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx1 = _elm_lang$html$Html_Attributes$class('mx-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mx0 = _elm_lang$html$Html_Attributes$class('mx-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mrAuto = _elm_lang$html$Html_Attributes$class('mr-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr5 = _elm_lang$html$Html_Attributes$class('mr-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr4 = _elm_lang$html$Html_Attributes$class('mr-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr3 = _elm_lang$html$Html_Attributes$class('mr-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr2 = _elm_lang$html$Html_Attributes$class('mr-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr1 = _elm_lang$html$Html_Attributes$class('mr-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mr0 = _elm_lang$html$Html_Attributes$class('mr-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mlAuto = _elm_lang$html$Html_Attributes$class('ml-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml5 = _elm_lang$html$Html_Attributes$class('ml-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml4 = _elm_lang$html$Html_Attributes$class('ml-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml3 = _elm_lang$html$Html_Attributes$class('ml-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml2 = _elm_lang$html$Html_Attributes$class('ml-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml1 = _elm_lang$html$Html_Attributes$class('ml-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$ml0 = _elm_lang$html$Html_Attributes$class('ml-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mbAuto = _elm_lang$html$Html_Attributes$class('mb-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb5 = _elm_lang$html$Html_Attributes$class('mb-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb4 = _elm_lang$html$Html_Attributes$class('mb-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb3 = _elm_lang$html$Html_Attributes$class('mb-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb2 = _elm_lang$html$Html_Attributes$class('mb-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb1 = _elm_lang$html$Html_Attributes$class('mb-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mb0 = _elm_lang$html$Html_Attributes$class('mb-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mtAuto = _elm_lang$html$Html_Attributes$class('mt-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt5 = _elm_lang$html$Html_Attributes$class('mt-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt4 = _elm_lang$html$Html_Attributes$class('mt-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt3 = _elm_lang$html$Html_Attributes$class('mt-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt2 = _elm_lang$html$Html_Attributes$class('mt-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt1 = _elm_lang$html$Html_Attributes$class('mt-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mt0 = _elm_lang$html$Html_Attributes$class('mt-0');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$mAuto = _elm_lang$html$Html_Attributes$class('m-auto');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m5 = _elm_lang$html$Html_Attributes$class('m-5');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m4 = _elm_lang$html$Html_Attributes$class('m-4');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m3 = _elm_lang$html$Html_Attributes$class('m-3');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m2 = _elm_lang$html$Html_Attributes$class('m-2');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m1 = _elm_lang$html$Html_Attributes$class('m-1');
+var _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m0 = _elm_lang$html$Html_Attributes$class('m-0');
+
 var _user$project$Home_HomeApiModel$Member = F2(
 	function (a, b) {
 		return {time: a, close: b};
@@ -39405,6 +39861,12 @@ var _user$project$Home_HomeApiModel$None = {ctor: 'None'};
 
 var _user$project$Home_HomeMessage$OnTime = function (a) {
 	return {ctor: 'OnTime', _0: a};
+};
+var _user$project$Home_HomeMessage$OnFetch24Hours = function (a) {
+	return {ctor: 'OnFetch24Hours', _0: a};
+};
+var _user$project$Home_HomeMessage$OnFetch3Days = function (a) {
+	return {ctor: 'OnFetch3Days', _0: a};
 };
 var _user$project$Home_HomeMessage$OnFetchWeek = function (a) {
 	return {ctor: 'OnFetchWeek', _0: a};
@@ -39438,6 +39900,34 @@ var _user$project$Home_HomeSerializer$dataDecoder = function (decode) {
 };
 
 var _user$project$Home_HomeCommand$getTime = A2(_elm_lang$core$Task$perform, _user$project$Home_HomeMessage$OnTime, _elm_lang$core$Time$now);
+var _user$project$Home_HomeCommand$fetch24HoursUrl = function (time) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		'https://min-api.cryptocompare.com/data/histohour?fsym=ETH&tsym=USD&limit=24&e=CCCAGG&toTs=',
+		_elm_lang$core$Basics$toString(time));
+};
+var _user$project$Home_HomeCommand$fetch24HoursCmd = function (time) {
+	var request = A2(
+		_elm_lang$http$Http$get,
+		_user$project$Home_HomeCommand$fetch24HoursUrl(time),
+		_user$project$Home_HomeSerializer$dataDecoder(
+			_elm_lang$core$Json_Decode$list(_user$project$Home_HomeSerializer$memberDecoder)));
+	return A2(_elm_lang$http$Http$send, _user$project$Home_HomeMessage$OnFetch24Hours, request);
+};
+var _user$project$Home_HomeCommand$fetch3DaysUrl = function (time) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		'https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=USD&limit=3&e=CCCAGG&toTs=',
+		_elm_lang$core$Basics$toString(time));
+};
+var _user$project$Home_HomeCommand$fetch3DaysCmd = function (time) {
+	var request = A2(
+		_elm_lang$http$Http$get,
+		_user$project$Home_HomeCommand$fetch3DaysUrl(time),
+		_user$project$Home_HomeSerializer$dataDecoder(
+			_elm_lang$core$Json_Decode$list(_user$project$Home_HomeSerializer$memberDecoder)));
+	return A2(_elm_lang$http$Http$send, _user$project$Home_HomeMessage$OnFetch3Days, request);
+};
 var _user$project$Home_HomeCommand$fetchWeekUrl = function (time) {
 	return A2(
 		_elm_lang$core$Basics_ops['++'],
@@ -48647,11 +49137,69 @@ var _user$project$Home_HomeUpdate$update = F2(
 				};
 			case 'OnFetchWeek':
 				if (_p0._0.ctor === 'Ok') {
-					var _p2 = _p0._0._0;
-					var b = A2(_elm_lang$core$Debug$log, 'SAMPLE series', _user$project$Home_SampleData$timeSeries);
-					var series = _user$project$Home_HomeUpdate$buildTimeSeries(_p2);
-					var a = A2(_elm_lang$core$Debug$log, 'series', series);
-					var _p1 = A2(_elm_lang$core$Debug$log, 'document', _p2);
+					var series = _user$project$Home_HomeUpdate$buildTimeSeries(_p0._0._0);
+					var h = model.home;
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								home: _elm_lang$core$Native_Utils.update(
+									h,
+									{weekData: series})
+							}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				} else {
+					var h = model.home;
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								home: _elm_lang$core$Native_Utils.update(
+									h,
+									{
+										weekData: {ctor: '[]'}
+									})
+							}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				}
+			case 'OnFetch3Days':
+				if (_p0._0.ctor === 'Ok') {
+					var series = _user$project$Home_HomeUpdate$buildTimeSeries(_p0._0._0);
+					var h = model.home;
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								home: _elm_lang$core$Native_Utils.update(
+									h,
+									{weekData: series})
+							}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				} else {
+					var h = model.home;
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								home: _elm_lang$core$Native_Utils.update(
+									h,
+									{
+										weekData: {ctor: '[]'}
+									})
+							}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				}
+			case 'OnFetch24Hours':
+				if (_p0._0.ctor === 'Ok') {
+					var series = _user$project$Home_HomeUpdate$buildTimeSeries(_p0._0._0);
 					var h = model.home;
 					return {
 						ctor: '_Tuple2',
@@ -48709,8 +49257,21 @@ var _user$project$Home_HomeUpdate$update = F2(
 					_1: _user$project$Home_HomeCommand$getTime
 				};
 			default:
-				var _p4 = _p0._0;
-				var _p3 = A2(_elm_lang$core$Debug$log, 'time', _p4);
+				var _p2 = _p0._0;
+				var button = model.home.buttonState;
+				var command = function () {
+					var _p1 = button;
+					switch (_p1.ctor) {
+						case 'LastWeek':
+							return _user$project$Home_HomeCommand$fetchWeekCmd(_p2);
+						case 'Last3Days':
+							return _user$project$Home_HomeCommand$fetch3DaysCmd(_p2);
+						case 'Last24Hours':
+							return _user$project$Home_HomeCommand$fetch24HoursCmd(_p2);
+						default:
+							return _elm_lang$core$Platform_Cmd$none;
+					}
+				}();
 				var h = model.home;
 				return {
 					ctor: '_Tuple2',
@@ -48719,9 +49280,9 @@ var _user$project$Home_HomeUpdate$update = F2(
 						{
 							home: _elm_lang$core$Native_Utils.update(
 								h,
-								{time: _p4})
+								{time: _p2})
 						}),
-					_1: _user$project$Home_HomeCommand$fetchWeekCmd(_p4)
+					_1: command
 				};
 		}
 	});
@@ -48730,64 +49291,62 @@ var _user$project$Home_HomeView$padding = 50;
 var _user$project$Home_HomeView$h = 450;
 var _user$project$Home_HomeView$yScale = function (_p0) {
 	var _p1 = _p0;
-	var _p2 = _p1._1;
-	var a = A2(_elm_lang$core$Debug$log, 'MAXXX', _p2);
 	return A2(
 		_gampleman$elm_visualization$Visualization_Scale$linear,
-		{ctor: '_Tuple2', _0: _p1._0 - 200, _1: _p2},
+		{ctor: '_Tuple2', _0: _p1._0 - 200, _1: _p1._1},
 		{ctor: '_Tuple2', _0: _user$project$Home_HomeView$h - (2 * _user$project$Home_HomeView$padding), _1: 0});
 };
-var _user$project$Home_HomeView$w = 600;
-var _user$project$Home_HomeView$xScale = function (_p3) {
-	var _p4 = _p3;
+var _user$project$Home_HomeView$w = 780;
+var _user$project$Home_HomeView$xScale = function (_p2) {
+	var _p3 = _p2;
 	return A2(
 		_gampleman$elm_visualization$Visualization_Scale$time,
 		{
 			ctor: '_Tuple2',
-			_0: _elm_lang$core$Date$fromTime(_p4._0),
-			_1: _elm_lang$core$Date$fromTime(_p4._1)
+			_0: _elm_lang$core$Date$fromTime(_p3._0),
+			_1: _elm_lang$core$Date$fromTime(_p3._1)
 		},
 		{ctor: '_Tuple2', _0: 0, _1: _user$project$Home_HomeView$w - (2 * _user$project$Home_HomeView$padding)});
 };
 var _user$project$Home_HomeView$transformToLineData = F3(
-	function (_p7, _p6, _p5) {
-		var _p8 = _p7;
-		var _p9 = _p6;
-		var _p10 = _p5;
+	function (_p6, _p5, _p4) {
+		var _p7 = _p6;
+		var _p8 = _p5;
+		var _p9 = _p4;
 		var ysc = _user$project$Home_HomeView$yScale(
-			{ctor: '_Tuple2', _0: _p10._0, _1: _p10._1});
-		var xsc = _user$project$Home_HomeView$xScale(
 			{ctor: '_Tuple2', _0: _p9._0, _1: _p9._1});
+		var xsc = _user$project$Home_HomeView$xScale(
+			{ctor: '_Tuple2', _0: _p8._0, _1: _p8._1});
 		return _elm_lang$core$Maybe$Just(
 			{
 				ctor: '_Tuple2',
-				_0: A2(_gampleman$elm_visualization$Visualization_Scale$convert, xsc, _p8._0),
-				_1: A2(_gampleman$elm_visualization$Visualization_Scale$convert, ysc, _p8._1)
+				_0: A2(_gampleman$elm_visualization$Visualization_Scale$convert, xsc, _p7._0),
+				_1: A2(_gampleman$elm_visualization$Visualization_Scale$convert, ysc, _p7._1)
 			});
 	});
 var _user$project$Home_HomeView$tranfromToAreaData = F3(
-	function (_p13, _p12, _p11) {
-		var _p14 = _p13;
-		var _p17 = _p14._0;
-		var _p15 = _p12;
-		var _p16 = _p11;
+	function (_p12, _p11, _p10) {
+		var _p13 = _p12;
+		var _p16 = _p13._0;
+		var _p14 = _p11;
+		var _p15 = _p10;
 		var ysc = _user$project$Home_HomeView$yScale(
-			{ctor: '_Tuple2', _0: _p16._0, _1: _p16._1});
-		var xsc = _user$project$Home_HomeView$xScale(
 			{ctor: '_Tuple2', _0: _p15._0, _1: _p15._1});
+		var xsc = _user$project$Home_HomeView$xScale(
+			{ctor: '_Tuple2', _0: _p14._0, _1: _p14._1});
 		return _elm_lang$core$Maybe$Just(
 			{
 				ctor: '_Tuple2',
 				_0: {
 					ctor: '_Tuple2',
-					_0: A2(_gampleman$elm_visualization$Visualization_Scale$convert, xsc, _p17),
+					_0: A2(_gampleman$elm_visualization$Visualization_Scale$convert, xsc, _p16),
 					_1: _elm_lang$core$Tuple$first(
 						_gampleman$elm_visualization$Visualization_Scale$rangeExtent(ysc))
 				},
 				_1: {
 					ctor: '_Tuple2',
-					_0: A2(_gampleman$elm_visualization$Visualization_Scale$convert, xsc, _p17),
-					_1: A2(_gampleman$elm_visualization$Visualization_Scale$convert, ysc, _p14._1)
+					_0: A2(_gampleman$elm_visualization$Visualization_Scale$convert, xsc, _p16),
+					_1: A2(_gampleman$elm_visualization$Visualization_Scale$convert, ysc, _p13._1)
 				}
 			});
 	});
@@ -48798,9 +49357,9 @@ var _user$project$Home_HomeView$getMax = function (data) {
 		_elm_lang$core$List$maximum(
 			A2(
 				_elm_lang$core$List$map,
-				function (_p18) {
-					var _p19 = _p18;
-					return _p19._1;
+				function (_p17) {
+					var _p18 = _p17;
+					return _p18._1;
 				},
 				data)));
 };
@@ -48811,17 +49370,15 @@ var _user$project$Home_HomeView$getMin = function (data) {
 		_elm_lang$core$List$minimum(
 			A2(
 				_elm_lang$core$List$map,
-				function (_p20) {
-					var _p21 = _p20;
-					return _p21._1;
+				function (_p19) {
+					var _p20 = _p19;
+					return _p20._1;
 				},
 				data)));
 };
 var _user$project$Home_HomeView$yAxis = function (data) {
 	var max = _user$project$Home_HomeView$getMax(data);
-	var b = A2(_elm_lang$core$Debug$log, 'max', max);
 	var min = _user$project$Home_HomeView$getMin(data);
-	var a = A2(_elm_lang$core$Debug$log, 'min', min);
 	var scale = _user$project$Home_HomeView$yScale(
 		{ctor: '_Tuple2', _0: min, _1: max});
 	return A2(
@@ -48832,33 +49389,31 @@ var _user$project$Home_HomeView$yAxis = function (data) {
 		scale);
 };
 var _user$project$Home_HomeView$getFrom = function (data) {
-	var _p22 = _elm_lang$core$List$head(data);
-	if (_p22.ctor === 'Nothing') {
+	var _p21 = _elm_lang$core$List$head(data);
+	if (_p21.ctor === 'Nothing') {
 		return 0;
 	} else {
-		return _elm_lang$core$Date$toTime(_p22._0._0);
+		return _elm_lang$core$Date$toTime(_p21._0._0);
 	}
 };
 var _user$project$Home_HomeView$lastElem = A2(
 	_elm_lang$core$List$foldl,
-	function (_p23) {
+	function (_p22) {
 		return _elm_lang$core$Basics$always(
-			_elm_lang$core$Maybe$Just(_p23));
+			_elm_lang$core$Maybe$Just(_p22));
 	},
 	_elm_lang$core$Maybe$Nothing);
 var _user$project$Home_HomeView$getTo = function (data) {
-	var _p24 = _user$project$Home_HomeView$lastElem(data);
-	if (_p24.ctor === 'Nothing') {
+	var _p23 = _user$project$Home_HomeView$lastElem(data);
+	if (_p23.ctor === 'Nothing') {
 		return 0;
 	} else {
-		return _elm_lang$core$Date$toTime(_p24._0._0);
+		return _elm_lang$core$Date$toTime(_p23._0._0);
 	}
 };
 var _user$project$Home_HomeView$xAxis = function (data) {
 	var to = _user$project$Home_HomeView$getTo(data);
-	var b = A2(_elm_lang$core$Debug$log, 'to', to);
 	var from = _user$project$Home_HomeView$getFrom(data);
-	var a = A2(_elm_lang$core$Debug$log, 'from', from);
 	var scale = _user$project$Home_HomeView$xScale(
 		{ctor: '_Tuple2', _0: from, _1: to});
 	return A2(
@@ -49129,15 +49684,15 @@ var _user$project$Home_HomeView$chartButtons = function (model) {
 		});
 };
 var _user$project$Home_HomeView$getCurrentUser = function (model) {
-	var _p25 = model.session;
-	if (_p25.ctor === 'Nothing') {
+	var _p24 = model.session;
+	if (_p24.ctor === 'Nothing') {
 		return '';
 	} else {
-		var _p26 = _p25._0.user;
-		if (_p26.ctor === 'Nothing') {
+		var _p25 = _p24._0.user;
+		if (_p25.ctor === 'Nothing') {
 			return '';
 		} else {
-			return _p26._0.name;
+			return _p25._0.name;
 		}
 	}
 };
@@ -49146,7 +49701,11 @@ var _user$project$Home_HomeView$mainContent = function (model) {
 		ctor: '::',
 		_0: A2(
 			_elm_lang$html$Html$h1,
-			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m5Lg,
+				_1: {ctor: '[]'}
+			},
 			{
 				ctor: '::',
 				_0: _elm_lang$html$Html$text(
@@ -49161,7 +49720,27 @@ var _user$project$Home_HomeView$mainContent = function (model) {
 			_0: _user$project$Home_HomeView$chartButtons(model),
 			_1: {
 				ctor: '::',
-				_0: _user$project$Home_HomeView$weekChart(model.home.weekData),
+				_0: (_elm_lang$core$Native_Utils.cmp(
+					_elm_lang$core$List$length(model.home.weekData),
+					0) > 0) ? _user$project$Home_HomeView$weekChart(model.home.weekData) : A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m5Lg,
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$h4,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Click on a button to load data'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}),
 				_1: {ctor: '[]'}
 			}
 		}
@@ -49448,7 +50027,8 @@ var _user$project$Session_SessionCommand$checkSession = function (session) {
 };
 var _user$project$Session_SessionCommand$checkSessionCmd = F2(
 	function (session, location) {
-		return _user$project$Session_SessionCommand$checkSession(session) ? _elm_lang$navigation$Navigation$modifyUrl('/#') : (_elm_lang$core$Native_Utils.eq(location.hash, 'signin') ? _elm_lang$navigation$Navigation$modifyUrl('/#signin') : _elm_lang$navigation$Navigation$modifyUrl('/#signup'));
+		var _p4 = A2(_elm_lang$core$Debug$log, 'hash', location.hash);
+		return _user$project$Session_SessionCommand$checkSession(session) ? _elm_lang$navigation$Navigation$modifyUrl('/#') : (_elm_lang$core$Native_Utils.eq(location.hash, '#signup') ? _elm_lang$navigation$Navigation$modifyUrl('/#signup') : _elm_lang$navigation$Navigation$modifyUrl('/#signin'));
 	});
 var _user$project$Session_SessionCommand$storeSessionCmd = function (session) {
 	return _user$project$Session_SessionPort$storeSession(
@@ -50193,7 +50773,11 @@ var _user$project$Signin_SigninView$view = function (model) {
 	var _p5 = A2(_elm_lang$core$Debug$log, 'foo', model);
 	return A2(
 		_elm_lang$html$Html$div,
-		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m4Lg,
+			_1: {ctor: '[]'}
+		},
 		{
 			ctor: '::',
 			_0: _rundis$elm_bootstrap$Bootstrap_Card$view(
@@ -50404,7 +50988,11 @@ var _user$project$Signup_SignupView$view = function (model) {
 	var _p5 = A2(_elm_lang$core$Debug$log, 'foo', model);
 	return A2(
 		_elm_lang$html$Html$div,
-		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _rundis$elm_bootstrap$Bootstrap_Utilities_Spacing$m4Lg,
+			_1: {ctor: '[]'}
+		},
 		{
 			ctor: '::',
 			_0: _rundis$elm_bootstrap$Bootstrap_Card$view(
@@ -50422,7 +51010,18 @@ var _user$project$Signup_SignupView$view = function (model) {
 							},
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html$text('No account?'),
+								_0: A2(
+									_elm_lang$html$Html$a,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$href('#signin'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('Already have an account?'),
+										_1: {ctor: '[]'}
+									}),
 								_1: {ctor: '[]'}
 							}),
 						_1: {ctor: '[]'}
@@ -50446,7 +51045,7 @@ var _user$project$Signup_SignupView$view = function (model) {
 									{ctor: '[]'},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('Sign in'),
+										_0: _elm_lang$html$Html$text('Sign up'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {ctor: '[]'}

@@ -5,6 +5,7 @@ import Signin.SigninMessage exposing (Msg)
 import Signin.SigninModel exposing (Login, FormField, Error)
 import Html exposing (Html, a, p, h2, h3, text, div, small, label, li, ul)
 import Html.Attributes exposing (href, class, style, for)
+import Bootstrap.Utilities.Spacing as Spacing
 import Bootstrap.Card as Card
 import Bootstrap.Alert as Alert
 import Bootstrap.Card.Block as Block
@@ -66,7 +67,7 @@ view model =
             Debug.log "foo" model
     in
         div
-            []
+            [ Spacing.m4Lg ]
             [ Card.config [ Card.align Text.alignXsCenter ]
                 |> Card.header [] [ h3 [] [ text "Sign in" ] ]
                 |> Card.block [] [ Block.custom <| form model.signin ]

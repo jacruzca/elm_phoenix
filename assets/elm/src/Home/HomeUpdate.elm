@@ -3,7 +3,7 @@ module Home.HomeUpdate exposing (..)
 import Model exposing (Model)
 import Home.HomeMessage exposing (Msg)
 import Home.HomeApiModel exposing (Member)
-import Home.HomeCommand exposing (fetchWeekCmd, getTime)
+import Home.HomeCommand exposing (fetchWeekCmd, getTime, fetch3DaysCmd, fetch24HoursCmd)
 import Session.SessionPort exposing (storeSession)
 import Navigation
 import Date exposing (Date)
@@ -33,21 +33,46 @@ update msg model =
                 h =
                     model.home
 
-                _ =
-                    Debug.log "document" document
-
                 series =
                     buildTimeSeries document
-
-                a =
-                    Debug.log "series" series
-
-                b =
-                    Debug.log "SAMPLE series" timeSeries
             in
                 ( { model | home = { h | weekData = series } }, Cmd.none )
 
         Home.HomeMessage.OnFetchWeek (Err _) ->
+            let
+                h =
+                    model.home
+            in
+                ( { model | home = { h | weekData = [] } }, Cmd.none )
+
+        Home.HomeMessage.OnFetch3Days (Ok document) ->
+            let
+                h =
+                    model.home
+
+                series =
+                    buildTimeSeries document
+            in
+                ( { model | home = { h | weekData = series } }, Cmd.none )
+
+        Home.HomeMessage.OnFetch3Days (Err _) ->
+            let
+                h =
+                    model.home
+            in
+                ( { model | home = { h | weekData = [] } }, Cmd.none )
+
+        Home.HomeMessage.OnFetch24Hours (Ok document) ->
+            let
+                h =
+                    model.home
+
+                series =
+                    buildTimeSeries document
+            in
+                ( { model | home = { h | weekData = series } }, Cmd.none )
+
+        Home.HomeMessage.OnFetch24Hours (Err _) ->
             let
                 h =
                     model.home
@@ -69,7 +94,21 @@ update msg model =
                 h =
                     model.home
 
-                _ =
-                    Debug.log "time" time
+                button =
+                    model.home.buttonState
+
+                command =
+                    case button of
+                        Home.HomeApiModel.LastWeek ->
+                            fetchWeekCmd time
+
+                        Home.HomeApiModel.Last3Days ->
+                            fetch3DaysCmd time
+
+                        Home.HomeApiModel.Last24Hours ->
+                            fetch24HoursCmd time
+
+                        Home.HomeApiModel.None ->
+                            Cmd.none
             in
-                ( { model | home = { h | time = time } }, fetchWeekCmd time )
+                ( { model | home = { h | time = time } }, command )

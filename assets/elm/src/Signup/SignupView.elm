@@ -3,8 +3,9 @@ module Signup.SignupView exposing (..)
 import Model exposing (Model)
 import Signup.SignupMessage exposing (Msg)
 import Signup.SignupModel exposing (Signup, FormField, Error)
-import Html exposing (Html, p, h2, h3, text, div, small, label, li, ul)
+import Html exposing (Html, a, p, h2, h3, text, div, small, label, li, ul)
 import Html.Attributes exposing (href, class, style, for)
+import Bootstrap.Utilities.Spacing as Spacing
 import Bootstrap.Card as Card
 import Bootstrap.Alert as Alert
 import Bootstrap.Card.Block as Block
@@ -74,11 +75,11 @@ view model =
             Debug.log "foo" model
     in
         div
-            []
+            [ Spacing.m4Lg ]
             [ Card.config [ Card.align Text.alignXsCenter ]
-                |> Card.header [] [ h3 [] [ text "Sign in" ] ]
+                |> Card.header [] [ h3 [] [ text "Sign up" ] ]
                 |> Card.block [] [ Block.custom <| form model.signup ]
                 |> Card.footer []
-                    [ small [ class "text-muted" ] [ text "No account?" ] ]
+                    [ small [ class "text-muted" ] [ a [ href "#signin" ] [ text "Already have an account?" ] ] ]
                 |> Card.view
             ]

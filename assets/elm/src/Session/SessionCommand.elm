@@ -37,9 +37,13 @@ checkSession session =
 
 checkSessionCmd : Maybe Session -> Navigation.Location -> Cmd msg
 checkSessionCmd session location =
-    if checkSession session then
-        Navigation.modifyUrl "/#"
-    else if location.hash == "signin" then
-        Navigation.modifyUrl "/#signin"
-    else
-        Navigation.modifyUrl "/#signup"
+    let
+        _ =
+            Debug.log "hash" location.hash
+    in
+        if checkSession session then
+            Navigation.modifyUrl "/#"
+        else if location.hash == "#signup" then
+            Navigation.modifyUrl "/#signup"
+        else
+            Navigation.modifyUrl "/#signin"

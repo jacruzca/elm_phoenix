@@ -2,8 +2,9 @@ module Home.HomeView exposing (..)
 
 import Model exposing (Model)
 import Html.Events exposing (onClick)
-import Html exposing (Html, div, text, h1, h2, a)
+import Html exposing (Html, div, text, h1, h2, h4, a)
 import Html.Attributes exposing (href)
+import Bootstrap.Utilities.Spacing as Spacing
 import Bootstrap.Navbar as Navbar
 import Bootstrap.Grid as Grid
 import Bootstrap.ButtonGroup as ButtonGroup
@@ -71,9 +72,12 @@ getCurrentUser model =
 
 mainContent : Model -> List (Html Msg)
 mainContent model =
-    [ h1 [] [ text ("Welcome " ++ (getCurrentUser model)) ]
+    [ h1 [ Spacing.m5Lg ] [ text ("Welcome " ++ (getCurrentUser model)) ]
     , chartButtons model
-    , weekChart model.home.weekData
+    , if List.length model.home.weekData > 0 then
+        weekChart model.home.weekData
+      else
+        div [ Spacing.m5Lg ] [ h4 [] [ text "Click on a button to load data" ] ]
     ]
 
 
@@ -152,7 +156,7 @@ getMax data =
 
 w : Float
 w =
-    600
+    780
 
 
 h : Float
@@ -172,11 +176,7 @@ xScale ( from, to ) =
 
 yScale : ( Float, Float ) -> ContinuousScale
 yScale ( min, max ) =
-    let
-        a =
-            Debug.log "MAXXX" max
-    in
-        Scale.linear ( min - 200, max ) ( h - 2 * padding, 0 )
+    Scale.linear ( min - 200, max ) ( h - 2 * padding, 0 )
 
 
 xAxis : List ( Date, Float ) -> Svg msg
@@ -187,12 +187,6 @@ xAxis data =
 
         to =
             getTo data
-
-        a =
-            Debug.log "from" from
-
-        b =
-            Debug.log "to" to
 
         scale =
             xScale ( from, to )
@@ -208,12 +202,6 @@ yAxis data =
 
         max =
             getMax data
-
-        a =
-            Debug.log "min" min
-
-        b =
-            Debug.log "max" max
 
         scale =
             yScale ( min, max )

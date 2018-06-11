@@ -12,4 +12,6 @@ type Msg
     | Logout
     | ClickButton ButtonState
     | OnFetchWeek (Result Http.Error (List Member))
+    | OnFetch3Days (Result Http.Error (List Member))
+    | OnFetch24Hours (Result Http.Error (List Member))
     | OnTime Time
