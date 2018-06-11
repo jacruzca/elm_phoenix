@@ -107,8 +107,8 @@ weekChart model =
         , g [ transform ("translate(" ++ toString (padding - 1) ++ ", " ++ toString padding ++ ")") ]
             [ yAxis model ]
         , g [ transform ("translate(" ++ toString padding ++ ", " ++ toString padding ++ ")"), class "series" ]
-            [ Svg.path [ area model, stroke "none", strokeWidth "3px", fill "rgba(255, 0, 0, 0.54)" ] []
-            , Svg.path [ line model, stroke "red", strokeWidth "3px", fill "none" ] []
+            [ Svg.path [ area model, stroke "none", strokeWidth "3px", fill "rgba(0, 0, 255, 0.54)" ] []
+            , Svg.path [ line model, stroke "blue", strokeWidth "3px", fill "none" ] []
             ]
         ]
 

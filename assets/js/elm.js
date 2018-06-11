@@ -49577,7 +49577,7 @@ var _user$project$Home_HomeView$weekChart = function (model) {
 											_0: _elm_lang$svg$Svg_Attributes$strokeWidth('3px'),
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$svg$Svg_Attributes$fill('rgba(255, 0, 0, 0.54)'),
+												_0: _elm_lang$svg$Svg_Attributes$fill('rgba(0, 0, 255, 0.54)'),
 												_1: {ctor: '[]'}
 											}
 										}
@@ -49593,7 +49593,7 @@ var _user$project$Home_HomeView$weekChart = function (model) {
 										_0: _user$project$Home_HomeView$line(model),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$svg$Svg_Attributes$stroke('red'),
+											_0: _elm_lang$svg$Svg_Attributes$stroke('blue'),
 											_1: {
 												ctor: '::',
 												_0: _elm_lang$svg$Svg_Attributes$strokeWidth('3px'),
