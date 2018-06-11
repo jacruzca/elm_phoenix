@@ -11,19 +11,15 @@ import Home.HomeView
 
 view : Model -> Html Msg
 view model =
-    let
-        _ =
-            Debug.log "main foo" model
-    in
-        case model.screen of
-            Main ->
-                wrapScreen Update.HomeEvent <| Home.HomeView.view model
+    case model.screen of
+        Main ->
+            wrapScreen Update.HomeEvent <| Home.HomeView.view model
 
-            Signin ->
-                wrapScreen Update.SigninEvent <| Signin.SigninView.view model
+        Signin ->
+            wrapScreen Update.SigninEvent <| Signin.SigninView.view model
 
-            Signup ->
-                wrapScreen Update.SignupEvent <| Signup.SignupView.view model
+        Signup ->
+            wrapScreen Update.SignupEvent <| Signup.SignupView.view model
 
 
 wrapScreen : (msg -> Msg) -> Html msg -> Html Msg

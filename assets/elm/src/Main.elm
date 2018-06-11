@@ -21,8 +21,4 @@ main =
 
 init : Maybe Session.SessionModel.Session -> Navigation.Location -> ( Model, Cmd Update.Msg )
 init flags location =
-    let
-        _ =
-            Debug.log "flags" flags
-    in
-        ( Model.init location flags, checkSessionCmd flags location )
+    ( Model.init location flags, Cmd.batch [ checkSessionCmd flags location ] )

@@ -27,7 +27,7 @@ screenFromLocation : Location -> Screen
 screenFromLocation location =
     let
         isCurrent ( screen, hash ) =
-            "#" ++ hash == (Debug.log "location" location.hash)
+            "#" ++ hash == (location.hash)
 
         screenList =
             List.filter isCurrent screens

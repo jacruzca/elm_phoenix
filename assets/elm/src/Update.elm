@@ -28,7 +28,7 @@ update msg model =
                     checkSession model.session
 
                 fromLocation =
-                    Debug.log "LOCATION" (screenFromLocation location)
+                    screenFromLocation location
             in
                 { model
                     | screen =
