@@ -10,7 +10,7 @@ defmodule ElmPhoenixWeb.UserController do
     render(conn, "index.json", users: users)
   end
 
-  def signup(conn, %{"user" => user_params}) do
+  def signup(conn, user_params) do
     with {:ok, %User{} = user} <- Accounts.create_user(user_params),
          {:ok, token, _claims} <- Guardian.encode_and_sign(user) do
       conn |> render("signedup.json", token: token, user: user)

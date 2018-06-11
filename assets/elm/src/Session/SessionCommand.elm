@@ -35,9 +35,11 @@ checkSession session =
                             True
 
 
-checkSessionCmd : Maybe Session -> Cmd msg
-checkSessionCmd session =
+checkSessionCmd : Maybe Session -> Navigation.Location -> Cmd msg
+checkSessionCmd session location =
     if checkSession session then
         Navigation.modifyUrl "/#"
-    else
+    else if location.hash == "signin" then
         Navigation.modifyUrl "/#signin"
+    else
+        Navigation.modifyUrl "/#signup"

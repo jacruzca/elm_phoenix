@@ -1,7 +1,7 @@
 module Signin.SigninUpdate exposing (..)
 
 import Model exposing (Model)
-import Signin.SigninModel exposing (FormField, Error, Login, FormState, Signedin)
+import Signin.SigninModel exposing (FormField, Error, Login, FormState)
 import Signin.SigninMessage exposing (Msg)
 import Signin.SigninCommand exposing (signinCmd, errorDecoder)
 import Session.SessionCommand exposing (storeSessionCmd)

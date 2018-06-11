@@ -5,6 +5,7 @@ import Update exposing (Msg)
 import Router exposing (Screen(..))
 import Model exposing (Model)
 import Signin.SigninView
+import Signup.SignupView
 import Home.HomeView
 
 
@@ -22,8 +23,7 @@ view model =
                 wrapScreen Update.SigninEvent <| Signin.SigninView.view model
 
             Signup ->
-                div []
-                    [ text "Signup pending!" ]
+                wrapScreen Update.SignupEvent <| Signup.SignupView.view model
 
 
 wrapScreen : (msg -> Msg) -> Html msg -> Html Msg

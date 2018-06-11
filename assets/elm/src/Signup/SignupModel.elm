@@ -1,9 +1,11 @@
-module Signin.SigninModel exposing (..)
+module Signup.SignupModel exposing (..)
 
 
 type FormField
-    = Email
+    = Name
+    | Email
     | Password
+    | ConfirmPassword
 
 
 type FormState
@@ -17,10 +19,12 @@ type alias User =
     }
 
 
-type alias Login =
+type alias Signup =
     { errors : List Error
+    , name : String
     , email : String
     , password : String
+    , confirmPassword : String
     , showErrors : Bool
     , showPassword : Bool
     , formState : FormState
@@ -30,7 +34,15 @@ type alias Login =
 
 type alias BackendError =
     { status : String
-    , error : String
+    , errors : SingleBackendError
+    }
+
+
+type alias SingleBackendError =
+    { password : List String
+    , passwordConfirmation : List String
+    , password_confirmation : List String
+    , email : List String
     }
 
 
@@ -38,11 +50,13 @@ type alias Error =
     ( FormField, String )
 
 
-initialModel : Login
+initialModel : Signup
 initialModel =
     { errors = []
+    , name = ""
     , email = ""
     , password = ""
+    , confirmPassword = ""
     , showErrors = False
     , showPassword = False
     , formState = Editing

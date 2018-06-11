@@ -7,7 +7,7 @@ import Signin.SigninMessage exposing (Msg)
 import Signin.SigninSerializer exposing (loginEncoder)
 import Session.SessionSerializer exposing (sessionDecoder)
 import Session.SessionModel exposing (Session)
-import Signin.SigninModel exposing (Login, User, Signedin, BackendError)
+import Signin.SigninModel exposing (Login, User, BackendError)
 
 
 signinUrl : String

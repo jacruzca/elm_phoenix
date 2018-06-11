@@ -6,13 +6,16 @@ import Router exposing (screenFromLocation, Screen(..))
 import Home.HomeMessage
 import Home.HomeUpdate
 import Signin.SigninMessage
+import Signup.SignupMessage
 import Signin.SigninUpdate
+import Signup.SignupUpdate
 import Session.SessionCommand exposing (checkSession)
 
 
 type Msg
     = ChangeLocation Location
     | SigninEvent Signin.SigninMessage.Msg
+    | SignupEvent Signup.SignupMessage.Msg
     | HomeEvent Home.HomeMessage.Msg
 
 
@@ -24,13 +27,13 @@ update msg model =
                 check =
                     checkSession model.session
 
-                _ =
+                fromLocation =
                     Debug.log "LOCATION" (screenFromLocation location)
             in
                 { model
                     | screen =
-                        if check then
-                            screenFromLocation location
+                        if check || fromLocation == Signin || fromLocation == Signup then
+                            fromLocation
                         else
                             Signin
                 }
@@ -38,6 +41,9 @@ update msg model =
 
         SigninEvent e ->
             wrapScreen SigninEvent <| Signin.SigninUpdate.update e model
+
+        SignupEvent e ->
+            wrapScreen SignupEvent <| Signup.SignupUpdate.update e model
 
         HomeEvent e ->
             wrapScreen HomeEvent <| Home.HomeUpdate.update e model

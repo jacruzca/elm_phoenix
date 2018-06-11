@@ -25,4 +25,4 @@ init flags location =
         _ =
             Debug.log "flags" flags
     in
-        ( Model.init location flags, checkSessionCmd flags )
+        ( Model.init location flags, checkSessionCmd flags location )

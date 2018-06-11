@@ -3,7 +3,7 @@ module Signin.SigninView exposing (..)
 import Model exposing (Model)
 import Signin.SigninMessage exposing (Msg)
 import Signin.SigninModel exposing (Login, FormField, Error)
-import Html exposing (Html, p, h2, h3, text, div, small, label, li, ul)
+import Html exposing (Html, a, p, h2, h3, text, div, small, label, li, ul)
 import Html.Attributes exposing (href, class, style, for)
 import Bootstrap.Card as Card
 import Bootstrap.Alert as Alert
@@ -71,6 +71,6 @@ view model =
                 |> Card.header [] [ h3 [] [ text "Sign in" ] ]
                 |> Card.block [] [ Block.custom <| form model.signin ]
                 |> Card.footer []
-                    [ small [ class "text-muted" ] [ text "No account?" ] ]
+                    [ small [ class "text-muted" ] [ a [ href "#signup" ] [ text "No account?" ] ] ]
                 |> Card.view
             ]
