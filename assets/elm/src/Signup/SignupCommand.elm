@@ -12,7 +12,7 @@ import Signup.SignupModel exposing (Signup, BackendError, SingleBackendError)
 
 signupUrl : String
 signupUrl =
-    "http://localhost:4000/api/v1/signup"
+    "/api/v1/signup"
 
 
 errorsDecoder : Decode.Decoder SingleBackendError

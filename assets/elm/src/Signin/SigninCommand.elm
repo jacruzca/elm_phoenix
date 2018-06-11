@@ -12,7 +12,7 @@ import Signin.SigninModel exposing (Login, User, BackendError)
 
 signinUrl : String
 signinUrl =
-    "http://localhost:4000/api/v1/signin"
+    "/api/v1/signin"
 
 
 errorDecoder : Decode.Decoder BackendError

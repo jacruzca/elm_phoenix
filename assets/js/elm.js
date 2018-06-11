@@ -49985,7 +49985,7 @@ var _user$project$Signin_SigninCommand$errorDecoder = A3(
 		'status',
 		_elm_lang$core$Json_Decode$string,
 		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Signin_SigninModel$BackendError)));
-var _user$project$Signin_SigninCommand$signinUrl = 'http://localhost:4000/api/v1/signin';
+var _user$project$Signin_SigninCommand$signinUrl = '/api/v1/signin';
 var _user$project$Signin_SigninCommand$signinRequest = function (login) {
 	return _elm_lang$http$Http$request(
 		{
@@ -50297,7 +50297,7 @@ var _user$project$Signup_SignupCommand$errorDecoder = A3(
 		'status',
 		_elm_lang$core$Json_Decode$string,
 		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Signup_SignupModel$BackendError)));
-var _user$project$Signup_SignupCommand$signupUrl = 'http://localhost:4000/api/v1/signup';
+var _user$project$Signup_SignupCommand$signupUrl = '/api/v1/signup';
 var _user$project$Signup_SignupCommand$signupRequest = function (login) {
 	return _elm_lang$http$Http$request(
 		{
