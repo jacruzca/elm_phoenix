@@ -21,13 +21,6 @@ update msg model =
         Home.HomeMessage.NoOp ->
             ( model, Cmd.none )
 
-        Home.HomeMessage.NavMsg state ->
-            let
-                h =
-                    model.home
-            in
-                ( { model | home = { h | navState = state } }, Cmd.none )
-
         Home.HomeMessage.OnFetchWeek (Ok document) ->
             let
                 h =

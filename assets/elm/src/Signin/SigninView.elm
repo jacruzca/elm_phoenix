@@ -3,25 +3,21 @@ module Signin.SigninView exposing (..)
 import Model exposing (Model)
 import Signin.SigninMessage exposing (Msg)
 import Signin.SigninModel exposing (Login, FormField, Error)
-import Html exposing (Html, a, p, h2, h3, text, div, small, label, li, ul)
-import Html.Attributes exposing (href, class, style, for)
-import Bootstrap.Utilities.Spacing as Spacing
-import Bootstrap.Card as Card
-import Bootstrap.Alert as Alert
-import Bootstrap.Card.Block as Block
-import Bootstrap.Text as Text
-import Bootstrap.Button as Button
-import Bootstrap.Form as Form
-import Bootstrap.Form.Input as Input
-import Bootstrap.Button as Button
+import Html exposing (Html, a, p, h2, h3, input, text, span, div, small, label, li, ul)
+import Html.Attributes exposing (href, class, style, for, value, placeholder, name, type_)
+import Html.Events exposing (onInput, onClick)
 
 
 form : Login -> Html Msg
 form model =
-    Form.form []
+    div [ class "form" ]
         [ viewInput model Signin.SigninModel.Email "E-mail" "text" "email"
         , viewInput model Signin.SigninModel.Password "Password" "password" "password"
-        , Button.button [ Button.primary, Button.onClick Signin.SigninMessage.SubmitForm ] [ text "Submit" ]
+        , input [ type_ "submit", class "button  arrow", value "Sign in", onClick Signin.SigninMessage.SubmitForm ]
+            []
+        , div [ class "footer" ]
+            [ a [ href "/#signup" ] [ text "No account?" ]
+            ]
         ]
 
 
@@ -35,16 +31,10 @@ viewInput model formField label inputType inputName =
 
                 Signin.SigninModel.Password ->
                     model.password
-
-        input =
-            if inputType == "text" || (formField == Signin.SigninModel.Password && model.showPassword) then
-                Input.text
-            else
-                Input.password
     in
-        Form.group []
-            [ Form.label [ for inputName ] [ text label ]
-            , input [ Input.id inputName, Input.onInput <| Signin.SigninMessage.SetField formField ]
+        div []
+            [ input [ type_ inputType, placeholder label, name inputName, onInput (Signin.SigninMessage.SetField formField) ]
+                []
             , viewFormErrors model formField model.errors
             ]
 
@@ -54,24 +44,27 @@ viewFormErrors model field errors =
     if model.showErrors then
         errors
             |> List.filter (\( fieldError, _ ) -> fieldError == field)
-            |> List.map (\( _, error ) -> div [] [ Alert.simpleDanger [] [ text error ] ])
-            |> div [ class "formErrors" ]
+            |> List.map (\( _, error ) -> div [] [ span [ class "error" ] [ text error ] ])
+            |> div [ class "form-errors" ]
     else
-        div [ class "formErrors" ] []
+        div [ class "form-errors" ] []
 
 
 view : Model -> Html Msg
 view model =
-    let
-        _ =
-            Debug.log "foo" model
-    in
-        div
-            [ Spacing.m4Lg ]
-            [ Card.config [ Card.align Text.alignXsCenter ]
-                |> Card.header [] [ h3 [] [ text "Sign in" ] ]
-                |> Card.block [] [ Block.custom <| form model.signin ]
-                |> Card.footer []
-                    [ small [ class "text-muted" ] [ a [ href "#signup" ] [ text "No account?" ] ] ]
-                |> Card.view
+    div
+        [ class "form-page" ]
+        [ div [ class "background" ]
+            []
+        , div
+            [ class "header" ]
+            [ div []
+                [ text "Elm-Phoenix"
+                , span
+                    []
+                    [ text "Jhon" ]
+                ]
             ]
+        , form
+            model.signin
+        ]

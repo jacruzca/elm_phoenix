@@ -3,27 +3,23 @@ module Signup.SignupView exposing (..)
 import Model exposing (Model)
 import Signup.SignupMessage exposing (Msg)
 import Signup.SignupModel exposing (Signup, FormField, Error)
-import Html exposing (Html, a, p, h2, h3, text, div, small, label, li, ul)
-import Html.Attributes exposing (href, class, style, for)
-import Bootstrap.Utilities.Spacing as Spacing
-import Bootstrap.Card as Card
-import Bootstrap.Alert as Alert
-import Bootstrap.Card.Block as Block
-import Bootstrap.Text as Text
-import Bootstrap.Button as Button
-import Bootstrap.Form as Form
-import Bootstrap.Form.Input as Input
-import Bootstrap.Button as Button
+import Html exposing (Html, a, p, h2, h3, input, text, span, div, small, label, li, ul)
+import Html.Attributes exposing (href, class, style, for, value, placeholder, name, type_)
+import Html.Events exposing (onInput, onClick)
 
 
 form : Signup -> Html Msg
 form model =
-    Form.form []
+    div [ class "form" ]
         [ viewInput model Signup.SignupModel.Name "Name" "text" "name"
         , viewInput model Signup.SignupModel.Email "E-mail" "text" "email"
         , viewInput model Signup.SignupModel.Password "Password" "password" "password"
         , viewInput model Signup.SignupModel.ConfirmPassword "Confirm Password" "password" "password_confirmation"
-        , Button.button [ Button.primary, Button.onClick Signup.SignupMessage.SubmitForm ] [ text "Submit" ]
+        , input [ type_ "submit", class "button  arrow", value "Sign up", onClick Signup.SignupMessage.SubmitForm ]
+            []
+        , div [ class "footer" ]
+            [ a [ href "/#signin" ] [ text "Already have an account?" ]
+            ]
         ]
 
 
@@ -43,16 +39,10 @@ viewInput model formField label inputType inputName =
 
                 Signup.SignupModel.ConfirmPassword ->
                     model.confirmPassword
-
-        input =
-            if inputType == "text" || (formField == Signup.SignupModel.Password && model.showPassword) then
-                Input.text
-            else
-                Input.password
     in
-        Form.group []
-            [ Form.label [ for inputName ] [ text label ]
-            , input [ Input.id inputName, Input.onInput <| Signup.SignupMessage.SetField formField ]
+        div []
+            [ input [ type_ inputType, placeholder label, name inputName, onInput (Signup.SignupMessage.SetField formField) ]
+                []
             , viewFormErrors model formField model.errors
             ]
 
@@ -62,24 +52,27 @@ viewFormErrors model field errors =
     if model.showErrors then
         Debug.log "errors " errors
             |> List.filter (\( fieldError, _ ) -> fieldError == field)
-            |> List.map (\( _, error ) -> div [] [ Alert.simpleDanger [] [ text error ] ])
-            |> div [ class "formErrors" ]
+            |> List.map (\( _, error ) -> div [] [ div [ class "error" ] [ text error ] ])
+            |> div [ class "form-errors" ]
     else
-        div [ class "formErrors" ] []
+        div [ class "form-errors" ] []
 
 
 view : Model -> Html Msg
 view model =
-    let
-        _ =
-            Debug.log "foo" model
-    in
-        div
-            [ Spacing.m4Lg ]
-            [ Card.config [ Card.align Text.alignXsCenter ]
-                |> Card.header [] [ h3 [] [ text "Sign up" ] ]
-                |> Card.block [] [ Block.custom <| form model.signup ]
-                |> Card.footer []
-                    [ small [ class "text-muted" ] [ a [ href "#signin" ] [ text "Already have an account?" ] ] ]
-                |> Card.view
+    div
+        [ class "form-page" ]
+        [ div [ class "background" ]
+            []
+        , div
+            [ class "header" ]
+            [ div []
+                [ text "Elm-Phoenix"
+                , span
+                    []
+                    [ text "Jhon" ]
+                ]
             ]
+        , form
+            model.signup
+        ]

@@ -1,15 +1,9 @@
 module Home.HomeView exposing (..)
 
 import Model exposing (Model)
+import Html exposing (Html, a, p, button, h1, h2, h3, h4, input, text, span, div, small, label, li, ul)
+import Html.Attributes exposing (href, style, for, value, placeholder, name, type_)
 import Html.Events exposing (onClick)
-import Html exposing (Html, div, text, h1, h2, h4, a)
-import Html.Attributes exposing (href)
-import Bootstrap.Utilities.Spacing as Spacing
-import Bootstrap.Navbar as Navbar
-import Bootstrap.Grid as Grid
-import Bootstrap.ButtonGroup as ButtonGroup
-import Bootstrap.Button as Button
-import Bootstrap.Grid.Col as Col
 import Home.HomeMessage exposing (Msg)
 import Date exposing (Date)
 import Svg exposing (Svg, svg, g, Attribute)
@@ -20,39 +14,20 @@ import Visualization.Shape as Shape
 import Home.HomeApiModel
 
 
-menuItems : Model -> Navbar.CustomItem Msg
-menuItems model =
+menu : Model -> Html Msg
+menu model =
     let
         message =
             Home.HomeMessage.Logout
     in
-        Navbar.customItem
-            (Grid.container
-                []
-                [ Grid.row []
-                    [ Grid.col []
-                        [ a
-                            [ href "#" ]
-                            [ text "Home" ]
-                        ]
-                    , Grid.col
-                        [ Col.xs12, Col.mdAuto ]
-                        [ a
-                            [ href "/#", onClick message ]
-                            [ text "Logout" ]
-                        ]
-                    ]
-                ]
-            )
-
-
-menu : Model -> Html Msg
-menu model =
-    Navbar.config Home.HomeMessage.NavMsg
-        |> Navbar.collapseMedium
-        |> Navbar.brand [ href "#" ] [ text "SPA Example by Jhon" ]
-        |> Navbar.customItems [ (menuItems model) ]
-        |> Navbar.view model.home.navState
+        div [ class "topnav" ]
+            [ a [ href "#" ]
+                [ text "Home" ]
+            , a [ href "#" ]
+                [ text "Users" ]
+            , a [ href "/#", onClick message, style [ ( "float", "right" ) ] ]
+                [ text "Logout" ]
+            ]
 
 
 getCurrentUser : Model -> String
@@ -70,33 +45,47 @@ getCurrentUser model =
                     user.name
 
 
-mainContent : Model -> List (Html Msg)
+mainContent : Model -> Html Msg
 mainContent model =
-    [ h1 [ Spacing.m5Lg ] [ text ("Welcome " ++ (getCurrentUser model)) ]
-    , chartButtons model
-    , if List.length model.home.weekData > 0 then
-        weekChart model.home.weekData
-      else
-        div [ Spacing.m5Lg ] [ h4 [] [ text "Click on a button to load data" ] ]
-    ]
+    div []
+        [ h1 [] [ text ("Welcome " ++ (getCurrentUser model)) ]
+        , chartButtons model
+        , if List.length model.home.weekData > 0 then
+            weekChart model.home.weekData
+          else
+            div [] [ h4 [] [ text "Click on a button to load data" ] ]
+        ]
 
 
 chartButtons : Model -> Html Msg
 chartButtons model =
-    ButtonGroup.radioButtonGroup []
-        [ ButtonGroup.radioButton
-            (model.home.buttonState == Home.HomeApiModel.LastWeek)
-            [ Button.primary, Button.onClick <| Home.HomeMessage.ClickButton Home.HomeApiModel.LastWeek ]
-            [ text "Last Week" ]
-        , ButtonGroup.radioButton
-            (model.home.buttonState == Home.HomeApiModel.Last3Days)
-            [ Button.primary, Button.onClick <| Home.HomeMessage.ClickButton Home.HomeApiModel.Last3Days ]
-            [ text "Last 3 Days" ]
-        , ButtonGroup.radioButton
-            (model.home.buttonState == Home.HomeApiModel.Last24Hours)
-            [ Button.primary, Button.onClick <| Home.HomeMessage.ClickButton Home.HomeApiModel.Last24Hours ]
-            [ text "Last 24 Hours" ]
-        ]
+    let
+        lastWeekSelected =
+            if model.home.buttonState == Home.HomeApiModel.LastWeek then
+                "selected"
+            else
+                ""
+
+        last3DaysSelected =
+            if model.home.buttonState == Home.HomeApiModel.Last3Days then
+                "selected"
+            else
+                ""
+
+        last24HoursSelected =
+            if model.home.buttonState == Home.HomeApiModel.Last24Hours then
+                "selected"
+            else
+                ""
+    in
+        div [ class "btn-group" ]
+            [ button [ class lastWeekSelected, onClick <| Home.HomeMessage.ClickButton Home.HomeApiModel.LastWeek ]
+                [ text "Last Week" ]
+            , button [ class last3DaysSelected, onClick <| Home.HomeMessage.ClickButton Home.HomeApiModel.Last3Days ]
+                [ text "Last 3 Days" ]
+            , button [ class last24HoursSelected, onClick <| Home.HomeMessage.ClickButton Home.HomeApiModel.Last24Hours ]
+                [ text "Last 24 Hours" ]
+            ]
 
 
 weekChart : List ( Date, Float ) -> Svg msg
@@ -284,7 +273,15 @@ area model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ menu model
-        , Grid.container [] <| mainContent model
+    div [ class "home" ]
+        [ div [ class "header" ]
+            [ h1 []
+                [ text "Elm-Phoenix Jhon" ]
+            ]
+        , menu model
+        , mainContent model
+        , div [ class "footer" ]
+            [ h2 []
+                [ text "By Jhon Cruz" ]
+            ]
         ]

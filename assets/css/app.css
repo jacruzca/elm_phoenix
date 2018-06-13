@@ -1,1 +1,265 @@
 /* This file is for your main application css. */
+
+.form-page {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #fff;
+  font-family: Arial;
+  font-size: 12px;
+}
+
+.form-page {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+}
+
+.form-page .background {
+  top: -20px;
+  left: -20px;
+  right: -40px;
+  bottom: -40px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  background-image: url(/images/city.jpg);
+  background-size: cover;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.form-page .header {
+  position: absolute;
+  top: calc(50% - 35px);
+  left: calc(50% - 295px);
+  z-index: 2;
+}
+
+.form-page .header div {
+  float: left;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 200;
+}
+
+.form-page .header div span {
+  color: #fa5353 !important;
+}
+
+@media (max-width: 600px) {
+  .form-page .header {
+    left: calc(50% - 120px);
+    top: calc(50% - 150px);
+  }
+}
+
+.form {
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 50px);
+  height: 150px;
+  width: 350px;
+  padding: 10px;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .form {
+    top: calc(50%);
+    left: calc(50% - 150px);
+  }
+}
+
+.form input[type='text'] {
+  width: 250px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px;
+}
+
+.form input[type='password'] {
+  width: 250px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+.form input[type='submit'] {
+  width: 260px;
+  height: 35px;
+  background: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #c73f3f;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 6px;
+  margin-top: 10px;
+}
+
+.form input[type='submit']:hover {
+  opacity: 0.8;
+}
+
+.form input[type='submit']:active {
+  opacity: 0.6;
+}
+
+.form input[type='text']:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.form input[type='password']:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.form input[type='submit']:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+::-moz-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form .form-errors {
+  margin: 10px;
+  font-size: 12px;
+}
+
+.form .form-errors .error {
+  margin: 10px;
+}
+
+.footer {
+  padding: 10px;
+  z-index: 2;
+}
+
+.footer a {
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    top: calc(50%);
+    left: calc(50% - 150px);
+  }
+}
+
+.home {
+  max-width: 768px;
+  margin: auto;
+  padding: 20px;
+}
+
+.home .header {
+  text-align: center;
+  background: white;
+}
+
+.home .header h1 {
+  font-size: 50px;
+}
+
+.home .topnav {
+  overflow: hidden;
+  background-color: rgb(230, 76, 76);
+}
+
+.home .topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.home .topnav a:hover {
+  background-color: #cf943b;
+  color: black;
+}
+
+.home .btn-group {
+  margin: auto;
+  width: 50%;
+}
+
+.home .btn-group button {
+  background-color: rgb(230, 76, 76); /* Green background */
+  border: 1px solid red; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.home .btn-group .selected {
+  background-color: #cf943b;
+}
+
+.home .btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.home .btn-group:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.home .btn-group button:hover {
+  background-color: #cf943b;
+}
+
+.home .footer {
+  padding: 5px;
+  text-align: center;
+  background: rgba(201, 55, 55, 0.1);
+  margin-top: 80px;
+}
+
+@media screen and (max-width: 800px) {
+  .home .leftcolumn,
+  .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .home .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
